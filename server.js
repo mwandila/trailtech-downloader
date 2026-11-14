@@ -9,7 +9,7 @@
  */
 import { WsServer } from "./src/ws.js";
 import { download } from "./src/engine.js";
-import { shouldUseYtDlp, downloadWithYtDlp, normalizeMediaFormat } from "./src/youtube.js";
+import { shouldUseYtDlp, downloadWithYtDlp, normalizeMediaFormat, isExtractorPage, isVideoContentType, hasAudioStream } from "./src/youtube.js";
 import { getDownloadDirectory } from "./src/output.js";
 import fs from "node:fs";
 
@@ -60,7 +60,12 @@ function add(msg) {
   console.log("[Engine] add() called with URL:", msg.url);
 
   const requestedFormat = normalizeMediaFormat(msg.format);
-  const useYtDlp = shouldUseYtDlp(msg.url, msg.contentType);
+  // Direct video URLs from extractor-backed pages (twitter, tiktok, facebook...)
+  // are often VIDEO-ONLY adaptive streams; the page extractor returns muxed
+  // video+audio, so prefer yt-dlp on the page URL in those cases.
+  const fromExtractorPage = msg.pageUrl && isExtractorPage(msg.pageUrl) &&
+    isVideoContentType(msg.contentType || "", msg.url);
+  const useYtDlp = shouldUseYtDlp(msg.url, msg.contentType) || fromExtractorPage;
   const existing = [...tasks.values()].find((task) =>
     task.originalUrl === msg.url && task.format === requestedFormat &&
     ["queued", "active", "extracting"].includes(task.state)
@@ -71,6 +76,8 @@ function add(msg) {
     id: Date.now(),
     url: msg.url,
     originalUrl: msg.url,
+    pageUrl: msg.pageUrl || null,
+    contentType: msg.contentType || "",
     headers: sanitizeHeaders(msg.headers),
     file: null,
     state: "queued",
@@ -145,6 +152,43 @@ async function runTask(task) {
       task.phase = task.state === "done" ? "Complete" : "Paused";
       if (task.state === "paused") {
         task.error = "some segments never finished; retry by adding the URL again";
+      }
+
+      // Silent-file safety net: direct downloads of adaptive streams can
+      // yield video-only files. If the source page has a yt-dlp extractor,
+      // re-fetch with muxed audio and replace the silent file.
+      if (result.complete && task.pageUrl && isVideoContentType(task.contentType || "", task.file) &&
+          !(await hasAudioStream(task.file))) {
+        console.warn("[Engine] downloaded file has no audio stream; trying page extractor:", task.pageUrl);
+        task.state = "extracting";
+        task.phase = "Re-downloading with audio";
+        task.pct = -1;
+        broadcast(task);
+        try {
+          const retried = await downloadWithYtDlp(task.pageUrl, {
+            format: task.format,
+            useChromeCookies: task.useChromeCookies,
+            signal: task.controller.signal,
+            onProgress: (p, speed) => {
+              task.pct = p.pct;
+              task.speed = speed;
+              task.phase = p.phase || "Downloading";
+              broadcast(task);
+            },
+          });
+          const silentFile = task.file;
+          task.file = retried.file;
+          task.pct = 100;
+          task.state = "done";
+          task.phase = "Complete (with audio)";
+          fs.rm(silentFile, { force: true }, () => {});
+          console.log("[Engine] replaced silent file via extractor:", task.file);
+        } catch (retryErr) {
+          task.state = "done";
+          task.phase = "Complete";
+          task.error = "File downloaded, but the source stream had no audio track and the page extractor could not provide one";
+          console.warn("[Engine] extractor retry failed:", retryErr?.message || retryErr);
+        }
       }
     }
 

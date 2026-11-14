@@ -74,7 +74,8 @@ function checkMediaElement(el) {
       type: "media-detected",
       url,
       contentType: el.type || (tagName === "video" ? "video/mp4" : "audio/mpeg"),
-      tag: tagName
+      tag: tagName,
+      pageUrl: location.href
     });
     // YouTube gets one control from ensureYouTubeOverlay() at the player level.
     // Adding the generic media-element control as well creates a duplicate.
@@ -265,7 +266,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
         download.title = "No reply from TVD. Check that the engine is running, then retry.";
       }
     }, 7000);
-    sendExtensionMessage({ type: "download-with-dm", url, format: select.value }, (response, runtimeError) => {
+    sendExtensionMessage({ type: "download-with-dm", url, format: select.value, pageUrl: location.href }, (response, runtimeError) => {
       clearTimeout(waiting);
       if (runtimeError || !response?.success) {
         download.disabled = false;

@@ -186,3 +186,64 @@ async function findYtDlpExecutable() {
   }
   throw new Error("yt-dlp is required for YouTube downloads. On Windows run: winget install yt-dlp. Audio conversion and separate-stream merging also require FFmpeg.");
 }
+
+/* ---------- audio verification + extractor-site routing ---------- */
+
+/** Pages whose yt-dlp extractor reliably returns video+audio muxed. */
+const EXTRACTOR_HOSTS = [
+  "youtube.com", "youtu.be", "youtube-nocookie.com",
+  "twitter.com", "x.com", "mobile.twitter.com",
+  "facebook.com", "fb.watch",
+  "instagram.com",
+  "tiktok.com",
+  "reddit.com", "v.redd.it",
+  "vimeo.com",
+  "dailymotion.com", "dai.ly",
+  "bilibili.com", "b23.tv",
+  "soundcloud.com",
+  "bandcamp.com",
+  "twitch.tv", "clips.twitch.tv",
+  "pinterest.com", "pin.it",
+  "linkedin.com",
+  "snackvideo.com", "kuaishou.com",
+];
+
+/** True when the URL belongs to a page with a strong yt-dlp extractor. */
+export function isExtractorPage(value) {
+  try {
+    const host = new URL(value).hostname.toLowerCase().replace(/^www\./, "");
+    return EXTRACTOR_HOSTS.some((h) => host === h || host.endsWith("." + h));
+  } catch {
+    return false;
+  }
+}
+
+export function isVideoContentType(contentType = "", file = "") {
+  const ext = (file.match(/\.([a-z0-9]{2,5})$/i)?.[1] || "").toLowerCase();
+  return /(^video\/)|(^application\/vnd\.apple\.mpegurl)|(^application\/dash)/i.test(contentType) ||
+    ["mp4", "m4v", "mkv", "webm", "mov", "avi", "ts"].includes(ext);
+}
+
+/** Uses ffprobe to check whether a media file contains an audio stream. */
+export async function hasAudioStream(file) {
+  try {
+    const { spawn } = await import("node:child_process");
+    const out = await new Promise((resolve, reject) => {
+      const child = spawn("ffprobe", [
+        "-v", "error",
+        "-select_streams", "a",
+        "-show_entries", "stream=index",
+        "-of", "csv=p=0",
+        file,
+      ], { windowsHide: true });
+      let stdout = "", stderr = "";
+      child.stdout.on("data", (d) => (stdout += d));
+      child.stderr.on("data", (d) => (stderr += d));
+      child.on("error", reject);
+      child.on("exit", (code) => code === 0 ? resolve(stdout) : reject(new Error(stderr.trim() || `ffprobe exit ${code}`)));
+    });
+    return out.trim().length > 0;
+  } catch {
+    return true; // can't verify -> assume audio present rather than re-downloading
+  }
+}

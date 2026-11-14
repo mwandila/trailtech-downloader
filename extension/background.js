@@ -258,8 +258,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     try {
       const meta = pendingDownloads.get(message.url);
       const request = meta
-        ? { ...meta, format: message.format, tabId: meta.tabId ?? sender.tab?.id }
-        : { url: message.url, headers: {}, format: message.format, tabId: sender.tab?.id };
+        ? { ...meta, format: message.format, tabId: meta.tabId ?? sender.tab?.id, pageUrl: meta.pageUrl || message.pageUrl || sender.tab?.url || null }
+        : { url: message.url, headers: {}, format: message.format, tabId: sender.tab?.id, pageUrl: message.pageUrl || sender.tab?.url || null };
       chrome.storage.local.get({ useChromeCookies: false }, (settings) => {
         const success = downloadWithEngine({ ...request, useChromeCookies: settings.useChromeCookies === true });
         if (meta) pendingDownloads.delete(message.url);
@@ -277,6 +277,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       headers: {},
       contentType: message.contentType || "video/mp4",
       tabId: sender.tab?.id,
+      pageUrl: message.pageUrl || sender.tab?.url || null,
       source: "media-element"
     });
   } else if (message.type === "ping-engine") {
@@ -296,6 +297,7 @@ function downloadWithEngine(meta) {
     contentType: meta.contentType || "",
     format: meta.format || "best",
     tabId: meta.tabId,
+    pageUrl: meta.pageUrl || null,
     useChromeCookies: meta.useChromeCookies === true
   };
   
