@@ -359,13 +359,13 @@ function updateDownloadStatus(status) {
   // Update badge with active download count or progress
   if (status.state === "active") {
     chrome.action.setBadgeText({ text: `${Math.round(status.pct)}%` });
-    chrome.action.setBadgeBackgroundColor({ color: "#4CAF50" });
+    chrome.action.setBadgeBackgroundColor({ color: "#1EB980" }); // mint
   } else if (status.state === "done") {
     showNotification("Download Complete", status.file || status.url);
     setTimeout(() => chrome.action.setBadgeText({ text: "" }), 3000);
   } else if (status.state === "error") {
     chrome.action.setBadgeText({ text: "!" });
-    chrome.action.setBadgeBackgroundColor({ color: "#F44336" });
+    chrome.action.setBadgeBackgroundColor({ color: "#EF4123" }); // flame
     showNotification("Download Failed", status.error || status.url);
   }
 }

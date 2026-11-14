@@ -205,9 +205,9 @@ function attachDownloadControls(host, url, id, fixed = false) {
     position: ${fixed ? "fixed" : "absolute"};
     ${fixed ? "top: 110px; right: 18px;" : "top: 12px; right: 12px;"}
     z-index: 2147483647; width: 220px; padding: 8px;
-    border: 1px solid #38bdf8; border-radius: 7px;
-    background: rgba(186, 230, 253, .98); color: #0c4a6e;
-    box-shadow: 0 4px 18px rgba(0,0,0,.35);
+    border: 1px solid #23343f; border-radius: 7px;
+    background: linear-gradient(155deg, rgba(30, 47, 61, .97), rgba(14, 22, 30, .99)); color: #f4efe4;
+    box-shadow: 0 8px 26px -10px rgba(0,0,0,.85), 0 1px 0 rgba(244,239,228,.07) inset;
     font: 12px/1.3 system-ui, sans-serif; box-sizing: border-box;
   `;
 
@@ -218,7 +218,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
   close.type = "button";
   close.textContent = "×";
   close.title = "Hide download control";
-  close.style.cssText = "width:18px;flex:none;border:0;background:transparent;color:#0c4a6e;font:17px/14px system-ui;cursor:pointer;padding:0 2px";
+  close.style.cssText = "width:18px;flex:none;border:0;background:transparent;color:#93a6b4;font:17px/14px system-ui;cursor:pointer;padding:0 2px";
   close.addEventListener("click", () => {
     if (id === "dm-youtube-overlay") hiddenYouTubeOverlayUrl = url;
     overlay.remove();
@@ -230,7 +230,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
   controls.style.cssText = "display:flex;gap:6px;align-items:center;margin-top:4px";
   const select = document.createElement("select");
   select.setAttribute("aria-label", "Video resolution or audio format");
-  select.style.cssText = "min-width:0;flex:1;padding:6px 4px;border:1px solid #38bdf8;border-radius:5px;background:#fff;color:#123;font:11px system-ui";
+  select.style.cssText = "min-width:0;flex:1;padding:6px 4px;border:1px solid #23343f;border-radius:5px;background:#0e161e;color:#f4efe4;font:11px system-ui";
   for (const [value, text] of [["best", "Best"], ["1080p", "1080p"], ["720p", "720p"], ["480p", "480p"], ["360p", "360p"], ["audio-mp3", "MP3 audio"]]) {
     const option = document.createElement("option");
     option.value = value;
@@ -241,7 +241,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
   download.className = "dm-download-action";
   download.type = "button";
   download.textContent = "Download";
-  download.style.cssText = "padding:6px 8px;border:0;border-radius:5px;background:#facc15;color:#172033;font:700 11px system-ui;cursor:pointer";
+  download.style.cssText = "padding:6px 8px;border:0;border-radius:99px;background:#f0b429;color:#16110a;font:700 11px system-ui;cursor:pointer;box-shadow:0 6px 16px -6px rgba(240,180,41,.75)";
   download.addEventListener("click", () => {
     download.disabled = true;
     download.textContent = "Queued…";
@@ -268,13 +268,13 @@ function attachDownloadControls(host, url, id, fixed = false) {
   const status = document.createElement("div");
   status.className = "dm-download-status";
   status.textContent = "Ready";
-  status.style.cssText = "display:none;margin-top:5px;color:#0c4a6e;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis";
+  status.style.cssText = "display:none;margin-top:5px;color:#93a6b4;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis";
   const track = document.createElement("div");
   track.className = "dm-download-progress";
-  track.style.cssText = "display:none;height:4px;margin-top:4px;border-radius:3px;background:#7dd3fc;overflow:hidden";
+  track.style.cssText = "display:none;height:4px;margin-top:4px;border-radius:3px;background:#1e2f3d;overflow:hidden";
   const fill = document.createElement("div");
   fill.className = "dm-download-progress-fill";
-  fill.style.cssText = "height:100%;width:0;background:#38bdf8;transition:width .2s ease";
+  fill.style.cssText = "height:100%;width:0;background:#f0b429;box-shadow:0 0 8px rgba(240,180,41,.55);transition:width .2s ease";
   track.appendChild(fill);
   overlay.append(controls, status, track);
   host.appendChild(overlay);

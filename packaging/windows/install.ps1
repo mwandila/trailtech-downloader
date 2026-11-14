@@ -17,23 +17,47 @@ $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedDialog
 $form.MaximizeBox = $false
 $form.MinimizeBox = $false
 $form.StartPosition = 'CenterScreen'
-$form.BackColor = [System.Drawing.Color]::White
+$form.BackColor = [System.Drawing.Color]::FromArgb(8, 13, 18)
 
 $header = New-Object System.Windows.Forms.Panel
 $header.Dock = 'Top'
 $header.Height = 72
-$header.BackColor = [System.Drawing.Color]::FromArgb(24, 112, 220)
+$header.BackColor = [System.Drawing.Color]::FromArgb(14, 22, 30)
 $form.Controls.Add($header)
+# accent bar: gold -> flame -> signal -> mint (mwandila accent-bar gradient)
+$accent = New-Object System.Windows.Forms.Panel
+$accent.Dock = 'Bottom'
+$accent.Height = 3
+$accent.BackgroundImage = $null
+$accent.Add_Paint({
+    $brush = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
+        [System.Drawing.Rectangle]::new(0, 0, $accent.Width, $accent.Height),
+        [System.Drawing.Color]::FromArgb(240, 180, 41),
+        [System.Drawing.Color]::FromArgb(30, 185, 128), 0)
+    [System.Drawing.Drawing2D.ColorBlend]::new() | Out-Null
+    $blend = New-Object System.Drawing.Drawing2D.ColorBlend
+    $blend.Colors = @(
+        [System.Drawing.Color]::FromArgb(240, 180, 41),
+        [System.Drawing.Color]::FromArgb(239, 65, 35),
+        [System.Drawing.Color]::FromArgb(41, 182, 246),
+        [System.Drawing.Color]::FromArgb(30, 185, 128)
+    )
+    $blend.Positions = @(0, 0.4, 0.72, 1.0)
+    $brush.InterpolationColors = $blend
+    $_.Graphics.FillRectangle($brush, 0, 0, $accent.Width, $accent.Height)
+    $brush.Dispose()
+})
+$header.Controls.Add($accent)
 $headerTitle = New-Object System.Windows.Forms.Label
 $headerTitle.Text = 'Trail Video Downloader'
-$headerTitle.ForeColor = [System.Drawing.Color]::White
+$headerTitle.ForeColor = [System.Drawing.Color]::FromArgb(244, 239, 228)
 $headerTitle.Font = New-Object System.Drawing.Font('Segoe UI', 17, [System.Drawing.FontStyle]::Bold)
 $headerTitle.AutoSize = $true
-$headerTitle.Location = New-Object System.Drawing.Point(22, 10)
+$headerTitle.Location = New-Object System.Drawing.Point(22, 8)
 $header.Controls.Add($headerTitle)
 $headerSubtitle = New-Object System.Windows.Forms.Label
 $headerSubtitle.Text = 'TVD setup'
-$headerSubtitle.ForeColor = [System.Drawing.Color]::FromArgb(225, 240, 255)
+$headerSubtitle.ForeColor = [System.Drawing.Color]::FromArgb(147, 166, 180)
 $headerSubtitle.Font = New-Object System.Drawing.Font('Segoe UI', 9)
 $headerSubtitle.AutoSize = $true
 $headerSubtitle.Location = New-Object System.Drawing.Point(25, 45)
@@ -48,7 +72,7 @@ $form.Controls.Add($content)
 $footer = New-Object System.Windows.Forms.Panel
 $footer.Dock = 'Bottom'
 $footer.Height = 54
-$footer.BackColor = [System.Drawing.Color]::FromArgb(247, 249, 252)
+$footer.BackColor = [System.Drawing.Color]::FromArgb(14, 22, 30)
 $form.Controls.Add($footer)
 
 $backButton = New-Object System.Windows.Forms.Button
@@ -63,7 +87,8 @@ $nextButton.Text = 'Next >'
 $nextButton.Size = New-Object System.Drawing.Size(95, 31)
 $nextButton.Location = New-Object System.Drawing.Point(382, 11)
 $nextButton.FlatStyle = 'System'
-$nextButton.BackColor = [System.Drawing.Color]::FromArgb(24, 112, 220)
+$nextButton.BackColor = [System.Drawing.Color]::FromArgb(240, 180, 41)
+$nextButton.ForeColor = [System.Drawing.Color]::FromArgb(22, 17, 10)
 $footer.Controls.Add($nextButton)
 
 $cancelButton = New-Object System.Windows.Forms.Button
@@ -71,6 +96,7 @@ $cancelButton.Text = 'Cancel'
 $cancelButton.Size = New-Object System.Drawing.Size(75, 31)
 $cancelButton.Location = New-Object System.Drawing.Point(484, 11)
 $cancelButton.FlatStyle = 'System'
+$cancelButton.ForeColor = [System.Drawing.Color]::FromArgb(147, 166, 180)
 $footer.Controls.Add($cancelButton)
 
 function Add-BodyLabel([string]$Text, [int]$Top, [int]$Height = 48) {
@@ -79,7 +105,7 @@ function Add-BodyLabel([string]$Text, [int]$Top, [int]$Height = 48) {
     $label.Location = New-Object System.Drawing.Point(4, $Top)
     $label.Size = New-Object System.Drawing.Size(498, $Height)
     $label.Font = New-Object System.Drawing.Font('Segoe UI', 10)
-    $label.ForeColor = [System.Drawing.Color]::FromArgb(38, 47, 60)
+    $label.ForeColor = [System.Drawing.Color]::FromArgb(244, 239, 228)
     $content.Controls.Add($label)
     return $label
 }
@@ -164,7 +190,8 @@ function Set-Page([int]$Page) {
                     Add-BodyLabel ($script:toolWarnings -join "`r`n") 181 48 | Out-Null
                 }
             } else {
-                Add-BodyLabel 'TVD could not finish installing.' 8 35 | Out-Null
+                $errorLabel = Add-BodyLabel 'TVD could not finish installing.' 8 35
+                $errorLabel.ForeColor = [System.Drawing.Color]::FromArgb(239, 65, 35)
                 Add-BodyLabel $script:installError 52 135 | Out-Null
             }
             $nextButton.Text = 'Finish'
