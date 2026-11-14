@@ -2,9 +2,10 @@
 ' IExpress launches this (wscript.exe = GUI process), so no PowerShell
 ' console flashes or lingers behind the wizard.
 Option Explicit
-Dim shell, scriptDir, cmd
+Dim shell, fso, scriptDir, cmd
 Set shell = CreateObject("WScript.Shell")
-scriptDir = shell.GetParentFolderName(WScript.ScriptFullName)
+Set fso = CreateObject("Scripting.FileSystemObject")
+scriptDir = fso.GetParentFolderName(WScript.ScriptFullName)
 cmd = "powershell.exe -NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File """ & _
       scriptDir & "\install.ps1"""
 ' window style 0 = hidden; True = wait for install to finish so IExpress
