@@ -4,10 +4,49 @@
   <meta charset="utf-8">
   <title>Trail Video Downloader (TVD)</title>
   <style>
-    /* TVD palette — from the mwandila ticket-stub design system
+    /* TVD palette — from the mwandila ticket-stub design system.
+       Dark theme (ink) is default; light theme (paper) follows the OS.
        ink: #080D12/#0E161E/#15212C/#1E2F3D · line #23343F
-       bone: #ffffff · gold: #F0B429/#B8791A · signal: #29B6F6
-       mint: #1EB980 · flame: #EF4123 · mute: #93A6B4/#6B8090 */
+       bone: #F4EFE4 · paper: #F6F2E9/#EAE4D7 · gold: #F0B429/#B8791A
+       signal: #29B6F6 · mint: #1EB980 · flame: #EF4123 · mute: #93A6B4/#6B8090 */
+    :root {
+      color-scheme: dark;
+      --bg: #080d12;
+      --surface: #0e161e;
+      --surface-grad: linear-gradient(155deg, rgba(30, 47, 61, 0.95), rgba(14, 22, 30, 0.98));
+      --line: #23343f;
+      --text: #ffffff;
+      --muted: #93a6b4;
+      --muted-2: #6b8090;
+      --gold: #f0b429;
+      --gold-deep: #b8791a;
+      --signal: #29b6f6;
+      --mint: #1eb980;
+      --flame: #ef4123;
+      --track: #1e2f3d;
+      --ink-text: #16110a;
+      --on-gold: #16110a;
+      --scroll-track: #0e161e;
+      --item-bg: rgba(41, 182, 246, 0.07);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        color-scheme: light;
+        --bg: #f6f2e9;
+        --surface: #fffdf7;
+        --surface-grad: linear-gradient(155deg, #fffdf7, #f6f2e9);
+        --line: #ddd5c6;
+        --text: #080d12;
+        --muted: #51666f;
+        --muted-2: #6b8090;
+        --gold: #f0b429;
+        --gold-deep: #b8791a;
+        --track: #eae4d7;
+        --on-gold: #16110a;
+        --scroll-track: #eae4d7;
+        --item-bg: rgba(41, 182, 246, 0.08);
+      }
+    }
     * {
       margin: 0;
       padding: 0;
@@ -18,27 +57,26 @@
       max-height: 410px;
       overflow-y: auto;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #080d12;
-      color: #ffffff;
+      background: var(--bg);
+      color: var(--text);
       scrollbar-width: thin;
-      scrollbar-color: #b8791a #0e161e;
+      scrollbar-color: var(--gold-deep) var(--scroll-track);
     }
-    ::selection { background: #f0b429; color: #080d12; }
+    ::selection { background: var(--gold); color: var(--bg); }
     ::-webkit-scrollbar { width: 9px; }
-    ::-webkit-scrollbar-track { background: #0e161e; border-left: 1px solid #23343f; }
+    ::-webkit-scrollbar-track { background: var(--scroll-track); border-left: 1px solid var(--line); }
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(#b8791a, #7a5210);
-      border: 2px solid #0e161e;
+      background: linear-gradient(var(--gold-deep), #7a5210);
+      border: 2px solid var(--scroll-track);
       border-radius: 99px;
     }
     .header {
       position: relative;
-      background:
-        linear-gradient(155deg, rgba(30, 47, 61, 0.95), rgba(14, 22, 30, 0.98));
-      color: #ffffff;
+      background: var(--surface-grad);
+      color: var(--text);
       padding: 10px 12px;
       text-align: center;
-      border-bottom: 1px solid #23343f;
+      border-bottom: 1px solid var(--line);
       box-shadow: 0 1px 0 rgba(244, 239, 228, 0.06) inset;
     }
     .header::after {
@@ -52,7 +90,7 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 4px;
-      color: #f0b429;
+      color: var(--gold);
       text-shadow: 0 0 18px rgba(240, 180, 41, 0.35);
     }
     .status {
@@ -62,14 +100,12 @@
       text-transform: uppercase;
       opacity: 0.9;
     }
-    .status.connected { color: #1eb980; }
-    .status.disconnected { color: #ef4123; }
+    .status.connected { color: var(--mint); }
+    .status.disconnected { color: var(--flame); }
     .content { padding: 8px; }
     .section {
-      background:
-        linear-gradient(155deg, rgba(30, 47, 61, 0.95), rgba(14, 22, 30, 0.98)),
-        #0e161e;
-      border: 1px solid #23343f;
+      background: var(--surface-grad);
+      border: 1px solid var(--line);
       border-radius: 12px;
       padding: 9px;
       margin-bottom: 7px;
@@ -82,11 +118,11 @@
       font-size: 13px;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
-      color: #ffffff;
+      color: var(--text);
     }
     .section-title::before {
       content: "◼ ";
-      color: #f0b429;
+      color: var(--gold);
       font-size: 9px;
       vertical-align: 2px;
     }
@@ -96,47 +132,48 @@
       align-items: flex-start;
       font-size: 12px;
       line-height: 1.35;
-      color: #93a6b4;
+      color: var(--muted);
     }
-    .cookie-setting input { margin-top: 2px; accent-color: #f0b429; }
-    .setting-note { margin: 6px 0 0 22px; font-size: 10px; line-height: 1.35; color: #6b8090; }    .download-item {
+    .cookie-setting input { margin-top: 2px; accent-color: var(--gold); }
+    .setting-note { margin: 6px 0 0 22px; font-size: 10px; line-height: 1.35; color: var(--muted-2); }
+    .download-item {
       display: flex;
       align-items: flex-start;
       gap: 8px;
       padding: 8px;
-      background: rgba(41, 182, 246, 0.07);
+      background: var(--item-bg);
       border-radius: 6px;
       margin-bottom: 8px;
-      border: 1px solid #23343f;
-      border-left: 3px solid #29b6f6;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--signal);
     }
     #downloads-list { max-height: 224px; overflow-y: auto; }
     .download-item:last-child { margin-bottom: 0; }
     .download-info { flex: 1; min-width: 0; }
     .download-url {
       font-size: 12px;
-      color: #ffffff;
+      color: var(--text);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
     .download-progress {
       font-size: 11px;
-      color: #6b8090;
+      color: var(--muted-2);
       font-family: ui-monospace, "SFMono-Regular", monospace;
       margin-top: 4px;
     }
     .progress-bar {
       width: 100%;
       height: 4px;
-      background: #1e2f3d;
+      background: var(--track);
       border-radius: 2px;
       margin-top: 6px;
       overflow: hidden;
     }
     .progress-fill {
       height: 100%;
-      background: #f0b429;
+      background: var(--gold);
       box-shadow: 0 0 8px rgba(240, 180, 41, 0.55);
       transition: width 0.3s ease;
     }
@@ -151,15 +188,15 @@
     }
     .download-action-button {
       padding: 4px 6px;
-      border: 1px solid #23343f;
+      border: 1px solid var(--line);
       border-radius: 4px;
-      background: #0e161e;
-      color: #93a6b4;
+      background: var(--surface);
+      color: var(--muted);
       font-size: 10px;
       cursor: pointer;
       transition: color .2s ease, border-color .2s ease;
     }
-    .download-action-button:hover { color: #ffffff; border-color: #b8791a; }
+    .download-action-button:hover { color: var(--text); border-color: var(--gold-deep); }
     .download-action-button:disabled {
       opacity: .55;
       cursor: default;
@@ -167,14 +204,14 @@
     .empty-state {
       text-align: center;
       padding: 18px 12px;
-      color: #6b8090;
+      color: var(--muted-2);
       font-size: 12px;
     }
     .button {
       width: 100%;
       padding: 8px;
-      background: #f0b429;
-      color: #16110a;
+      background: var(--gold);
+      color: var(--on-gold);
       border: none;
       border-radius: 99px;
       font-size: 14px;
@@ -192,40 +229,40 @@
     .input {
       width: 100%;
       padding: 10px;
-      border: 1px solid #23343f;
+      border: 1px solid var(--line);
       border-radius: 6px;
       font-size: 13px;
       margin-bottom: 8px;
-      background: #0e161e;
-      color: #ffffff;
+      background: var(--surface);
+      color: var(--text);
     }
     .input:focus {
       outline: none;
-      border-color: #f0b429;
+      border-color: var(--gold);
       box-shadow: 0 0 0 2px rgba(240, 180, 41, 0.25);
     }
     .select {
       width: 100%;
       padding: 7px;
       margin-bottom: 8px;
-      border: 1px solid #23343f;
+      border: 1px solid var(--line);
       border-radius: 6px;
-      background: #0e161e;
-      color: #ffffff;
+      background: var(--surface);
+      color: var(--text);
       font-size: 13px;
     }
     .secondary-button {
       width: 100%;
       margin-bottom: 8px;
       padding: 6px;
-      border: 1px solid #23343f;
+      border: 1px solid var(--line);
       border-radius: 6px;
-      background: rgba(14, 22, 30, 0.6);
-      color: #93a6b4;
+      background: var(--surface);
+      color: var(--muted);
       cursor: pointer;
       transition: color .2s ease, border-color .2s ease;
     }
-    .secondary-button:hover { color: #ffffff; border-color: #29b6f6; }
+    .secondary-button:hover { color: var(--text); border-color: var(--signal); }
   </style>
 </head>
 <body>

@@ -197,6 +197,19 @@ function attachDownloadControls(host, url, id, fixed = false) {
     host.style.position = "relative";
   }
 
+  // Follow the site's theme system: dark ink by default, paper in light mode.
+  const light = window.matchMedia?.("(prefers-color-scheme: light)").matches;
+  const THEME = light
+    ? {
+        surface: "#fffdf7", text: "#080d12", muted: "#51666f",
+        line: "#ddd5c6", track: "#eae4d7", shadow: "0 8px 26px -12px rgba(80, 70, 40, .35), 0 1px 0 rgba(8,13,18,.05) inset",
+      }
+    : {
+        surface: "linear-gradient(155deg, rgba(30, 47, 61, .97), rgba(14, 22, 30, .99))",
+        text: "#ffffff", muted: "#93a6b4", line: "#23343f", track: "#1e2f3d",
+        shadow: "0 8px 26px -10px rgba(0,0,0,.85), 0 1px 0 rgba(244,239,228,.07) inset",
+      };
+
   const overlay = document.createElement("div");
   overlay.id = id;
   overlay.className = "dm-download-controls";
@@ -205,9 +218,9 @@ function attachDownloadControls(host, url, id, fixed = false) {
     position: ${fixed ? "fixed" : "absolute"};
     ${fixed ? "top: 110px; right: 18px;" : "top: 12px; right: 12px;"}
     z-index: 2147483647; width: 220px; padding: 8px;
-    border: 1px solid #23343f; border-radius: 7px;
-    background: linear-gradient(155deg, rgba(30, 47, 61, .97), rgba(14, 22, 30, .99)); color: #ffffff;
-    box-shadow: 0 8px 26px -10px rgba(0,0,0,.85), 0 1px 0 rgba(244,239,228,.07) inset;
+    border: 1px solid ${THEME.line}; border-radius: 7px;
+    background: ${THEME.surface}; color: ${THEME.text};
+    box-shadow: ${THEME.shadow};
     font: 12px/1.3 system-ui, sans-serif; box-sizing: border-box;
   `;
 
@@ -218,7 +231,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
   close.type = "button";
   close.textContent = "×";
   close.title = "Hide download control";
-  close.style.cssText = "width:18px;flex:none;border:0;background:transparent;color:#93a6b4;font:17px/14px system-ui;cursor:pointer;padding:0 2px";
+  close.style.cssText = "width:18px;flex:none;border:0;background:transparent;color:" + THEME.muted + ";font:17px/14px system-ui;cursor:pointer;padding:0 2px";
   close.addEventListener("click", () => {
     if (id === "dm-youtube-overlay") hiddenYouTubeOverlayUrl = url;
     overlay.remove();
@@ -230,7 +243,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
   controls.style.cssText = "display:flex;gap:6px;align-items:center;margin-top:4px";
   const select = document.createElement("select");
   select.setAttribute("aria-label", "Video resolution or audio format");
-  select.style.cssText = "min-width:0;flex:1;padding:6px 4px;border:1px solid #23343f;border-radius:5px;background:#0e161e;color:#ffffff;font:11px system-ui";
+  select.style.cssText = "min-width:0;flex:1;padding:6px 4px;border:1px solid " + THEME.line + ";border-radius:5px;background:" + (light ? "#fffdf7" : "#0e161e") + ";color:" + THEME.text + ";font:11px system-ui";
   for (const [value, text] of [["best", "Best"], ["1080p", "1080p"], ["720p", "720p"], ["480p", "480p"], ["360p", "360p"], ["audio-mp3", "MP3 audio"]]) {
     const option = document.createElement("option");
     option.value = value;
@@ -268,10 +281,10 @@ function attachDownloadControls(host, url, id, fixed = false) {
   const status = document.createElement("div");
   status.className = "dm-download-status";
   status.textContent = "Ready";
-  status.style.cssText = "display:none;margin-top:5px;color:#93a6b4;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis";
+  status.style.cssText = "display:none;margin-top:5px;color:" + THEME.muted + ";font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis";
   const track = document.createElement("div");
   track.className = "dm-download-progress";
-  track.style.cssText = "display:none;height:4px;margin-top:4px;border-radius:3px;background:#1e2f3d;overflow:hidden";
+  track.style.cssText = "display:none;height:4px;margin-top:4px;border-radius:3px;background:" + THEME.track + ";overflow:hidden";
   const fill = document.createElement("div");
   fill.className = "dm-download-progress-fill";
   fill.style.cssText = "height:100%;width:0;background:#f0b429;box-shadow:0 0 8px rgba(240,180,41,.55);transition:width .2s ease";
