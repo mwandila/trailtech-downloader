@@ -50,7 +50,7 @@ $accent.Add_Paint({
 $header.Controls.Add($accent)
 $headerTitle = New-Object System.Windows.Forms.Label
 $headerTitle.Text = 'Trail Video Downloader'
-$headerTitle.ForeColor = [System.Drawing.Color]::FromArgb(244, 239, 228)
+$headerTitle.ForeColor = [System.Drawing.Color]::FromArgb(255, 255, 255)
 $headerTitle.Font = New-Object System.Drawing.Font('Segoe UI', 17, [System.Drawing.FontStyle]::Bold)
 $headerTitle.AutoSize = $true
 $headerTitle.Location = New-Object System.Drawing.Point(22, 8)
@@ -105,7 +105,7 @@ function Add-BodyLabel([string]$Text, [int]$Top, [int]$Height = 48) {
     $label.Location = New-Object System.Drawing.Point(4, $Top)
     $label.Size = New-Object System.Drawing.Size(498, $Height)
     $label.Font = New-Object System.Drawing.Font('Segoe UI', 10)
-    $label.ForeColor = [System.Drawing.Color]::FromArgb(244, 239, 228)
+    $label.ForeColor = [System.Drawing.Color]::FromArgb(255, 255, 255)
     $content.Controls.Add($label)
     return $label
 }

@@ -206,7 +206,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
     ${fixed ? "top: 110px; right: 18px;" : "top: 12px; right: 12px;"}
     z-index: 2147483647; width: 220px; padding: 8px;
     border: 1px solid #23343f; border-radius: 7px;
-    background: linear-gradient(155deg, rgba(30, 47, 61, .97), rgba(14, 22, 30, .99)); color: #f4efe4;
+    background: linear-gradient(155deg, rgba(30, 47, 61, .97), rgba(14, 22, 30, .99)); color: #ffffff;
     box-shadow: 0 8px 26px -10px rgba(0,0,0,.85), 0 1px 0 rgba(244,239,228,.07) inset;
     font: 12px/1.3 system-ui, sans-serif; box-sizing: border-box;
   `;
@@ -230,7 +230,7 @@ function attachDownloadControls(host, url, id, fixed = false) {
   controls.style.cssText = "display:flex;gap:6px;align-items:center;margin-top:4px";
   const select = document.createElement("select");
   select.setAttribute("aria-label", "Video resolution or audio format");
-  select.style.cssText = "min-width:0;flex:1;padding:6px 4px;border:1px solid #23343f;border-radius:5px;background:#0e161e;color:#f4efe4;font:11px system-ui";
+  select.style.cssText = "min-width:0;flex:1;padding:6px 4px;border:1px solid #23343f;border-radius:5px;background:#0e161e;color:#ffffff;font:11px system-ui";
   for (const [value, text] of [["best", "Best"], ["1080p", "1080p"], ["720p", "720p"], ["480p", "480p"], ["360p", "360p"], ["audio-mp3", "MP3 audio"]]) {
     const option = document.createElement("option");
     option.value = value;
