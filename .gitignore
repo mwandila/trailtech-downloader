@@ -1,6 +1,7 @@
 # reverse-engineering workspace (contains extracted proprietary files) — keep local only
 idm-study/
 
-# downloads
+# downloaded media-tool caches and packaged release artifacts (shared directly, not via git)
+dist/
 *.download
 *.bin

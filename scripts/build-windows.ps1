@@ -16,6 +16,15 @@ Copy-Item -LiteralPath (Join-Path $repoRoot 'server.js') -Destination $appRoot
 Copy-Item -LiteralPath (Join-Path $repoRoot 'package.json') -Destination $appRoot
 Copy-Item -LiteralPath (Join-Path $repoRoot 'src') -Destination $appRoot -Recurse
 Copy-Item -LiteralPath $nodePath -Destination (Join-Path $stageRoot 'node.exe')
+# Bundle media tools fetched by fetch-tools.ps1 (installer stays fully offline)
+& (Join-Path $PSScriptRoot 'fetch-tools.ps1') | Write-Host
+$toolsDir = Join-Path $distRoot 'tools'
+foreach ($tool in 'yt-dlp.exe', 'ffmpeg.exe', 'ffprobe.exe') {
+    if (-not (Test-Path -LiteralPath (Join-Path $toolsDir $tool))) {
+        throw "Missing media tool $tool. Run scripts\fetch-tools.ps1 first."
+    }
+    Copy-Item -LiteralPath (Join-Path $toolsDir $tool) -Destination (Join-Path $stageRoot $tool)
+}
 Compress-Archive -Path (Join-Path $appRoot '*') -DestinationPath (Join-Path $stageRoot 'app.zip') -CompressionLevel Optimal
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot '..\packaging\windows\install.ps1') -Destination (Join-Path $stageRoot 'install.ps1')
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot '..\packaging\windows\start-engine.vbs') -Destination (Join-Path $stageRoot 'start-engine.vbs')
@@ -60,6 +69,9 @@ FILE0="app.zip"
 FILE1="node.exe"
 FILE2="install.ps1"
 FILE3="start-engine.vbs"
+FILE4="yt-dlp.exe"
+FILE5="ffmpeg.exe"
+FILE6="ffprobe.exe"
 [SourceFiles]
 SourceFiles0=$stageRoot\
 [SourceFiles0]
@@ -67,6 +79,9 @@ SourceFiles0=$stageRoot\
 %FILE1%=
 %FILE2%=
 %FILE3%=
+%FILE4%=
+%FILE5%=
+%FILE6%=
 "@
 Set-Content -LiteralPath $sedPath -Value $sed -Encoding ASCII
 $reportPath = Join-Path $distRoot "~$($setupBase).RPT"

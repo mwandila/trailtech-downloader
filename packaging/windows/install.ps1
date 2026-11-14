@@ -129,7 +129,7 @@ function Set-Page([int]$Page) {
                 $dialog.Dispose()
             })
             $content.Controls.Add($browseButton)
-            $script:dependencyCheck = Add-CheckBox 'Install yt-dlp and FFmpeg with Winget if they are missing (recommended)' 92 $true
+            $script:dependencyCheck = Add-CheckBox 'Use Winget to fetch any missing media tool (rarely needed; tools are bundled offline)' 92 $true
             $script:startupCheck = Add-CheckBox 'Start the TVD engine automatically when I sign in' 126 $true
             Add-BodyLabel 'yt-dlp and FFmpeg enable extractor-based video downloads, audio merging, and MP3 conversion.' 166 50 | Out-Null
             $nextButton.Text = 'Next >'
@@ -137,13 +137,13 @@ function Set-Page([int]$Page) {
         2 {
             Add-BodyLabel 'Ready to install Trail Video Downloader.' 8 30 | Out-Null
             Add-BodyLabel "Install folder:`r`n$script:installRoot" 48 55 | Out-Null
-            $autoTools = if ($script:dependencyCheck.Checked) { 'Missing media tools will be installed through Winget.' } else { 'Media tools will not be installed automatically.' }
+            $autoTools = if ($script:dependencyCheck.Checked) { 'Winget is a fallback for any tool missing from the installer.' } else { 'Media tools come from the installer bundle; nothing is downloaded.' }
             $autoStart = if ($script:startupCheck.Checked) { 'The engine will start when you sign in.' } else { 'The engine will only start when you launch it manually.' }
             Add-BodyLabel "$autoTools`r`n$autoStart`r`nIf TVD is running, setup will stop it briefly before updating. Active downloads will be interrupted." 116 90 | Out-Null
             $nextButton.Text = 'Install'
         }
         3 {
-            Add-BodyLabel 'Installing TVD. This can take a few minutes if media tools need to be downloaded.' 8 48 | Out-Null
+            Add-BodyLabel 'Installing TVD. Media tools are bundled, so this normally takes under a minute.' 8 48 | Out-Null
             $progress = New-Object System.Windows.Forms.ProgressBar
             $progress.Style = [System.Windows.Forms.ProgressBarStyle]::Marquee
             $progress.MarqueeAnimationSpeed = 24
@@ -222,12 +222,33 @@ function Install-Tvd {
         Expand-Archive -LiteralPath (Join-Path $sourceRoot 'app.zip') -DestinationPath $script:installRoot -Force
         Copy-Item -LiteralPath (Join-Path $sourceRoot 'start-engine.vbs') -Destination (Join-Path $script:installRoot 'start-engine.vbs') -Force
 
+        # Bundled media tools: copied locally, fully offline. Winget is only a
+        # fallback for anything that failed to ship inside the installer.
+        $binDir = Join-Path $script:installRoot 'bin'
+        New-Item -ItemType Directory -Force -Path $binDir | Out-Null
+        $bundled = @()
+        foreach ($tool in 'yt-dlp.exe', 'ffmpeg.exe', 'ffprobe.exe') {
+            $src = Join-Path $sourceRoot $tool
+            if (Test-Path -LiteralPath $src) {
+                $script:statusLabel.Text = "Installing bundled $tool..."
+                [System.Windows.Forms.Application]::DoEvents()
+                Copy-Item -LiteralPath $src -Destination (Join-Path $binDir $tool) -Force
+                $bundled += $tool
+            }
+        }
+
         if ($script:dependencyCheck.Checked) {
             $env:PATH = "$(Join-Path $env:LOCALAPPDATA 'Microsoft\WinGet\Links');$env:PATH"
             $winget = Get-Command winget.exe -ErrorAction SilentlyContinue
             $tools = @()
-            if (-not (Get-Command yt-dlp.exe -ErrorAction SilentlyContinue)) { $tools += @{ Name = 'yt-dlp'; Id = 'yt-dlp.yt-dlp' } }
-            if (-not (Get-Command ffmpeg.exe -ErrorAction SilentlyContinue)) { $tools += @{ Name = 'FFmpeg'; Id = 'Gyan.FFmpeg.Essentials' } }
+            foreach ($tool in 'yt-dlp.exe', 'ffmpeg.exe') {
+                if (-not (Test-Path -LiteralPath (Join-Path $binDir $tool)) -and -not (Get-Command $tool -ErrorAction SilentlyContinue)) {
+                    $tools += @{
+                        Name = $tool -replace '\.exe$', ''
+                        Id   = if ($tool -eq 'yt-dlp.exe') { 'yt-dlp.yt-dlp' } else { 'Gyan.FFmpeg.Essentials' }
+                    }
+                }
+            }
             foreach ($tool in $tools) {
                 if (-not $winget) {
                     $script:toolWarnings.Add("Winget is unavailable. Install $($tool.Name) later with: winget install --id $($tool.Id) --exact")
