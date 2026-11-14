@@ -57,7 +57,7 @@ $headerTitle.Location = New-Object System.Drawing.Point(22, 8)
 $header.Controls.Add($headerTitle)
 $headerSubtitle = New-Object System.Windows.Forms.Label
 $headerSubtitle.Text = 'TVD setup'
-$headerSubtitle.ForeColor = [System.Drawing.Color]::FromArgb(147, 166, 180)
+$headerSubtitle.ForeColor = [System.Drawing.Color]::FromArgb(240, 180, 41)
 $headerSubtitle.Font = New-Object System.Drawing.Font('Segoe UI', 9)
 $headerSubtitle.AutoSize = $true
 $headerSubtitle.Location = New-Object System.Drawing.Point(25, 45)

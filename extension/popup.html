@@ -23,6 +23,7 @@
       scrollbar-width: thin;
       scrollbar-color: #b8791a #0e161e;
     }
+    ::selection { background: #f0b429; color: #080d12; }
     ::-webkit-scrollbar { width: 9px; }
     ::-webkit-scrollbar-track { background: #0e161e; border-left: 1px solid #23343f; }
     ::-webkit-scrollbar-thumb {
@@ -51,6 +52,8 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 4px;
+      color: #f0b429;
+      text-shadow: 0 0 18px rgba(240, 180, 41, 0.35);
     }
     .status {
       font-size: 12px;
@@ -81,6 +84,12 @@
       margin-bottom: 12px;
       color: #f4efe4;
     }
+    .section-title::before {
+      content: "◼ ";
+      color: #f0b429;
+      font-size: 9px;
+      vertical-align: 2px;
+    }
     .cookie-setting {
       display: flex;
       gap: 8px;
@@ -90,8 +99,7 @@
       color: #93a6b4;
     }
     .cookie-setting input { margin-top: 2px; accent-color: #f0b429; }
-    .setting-note { margin: 6px 0 0 22px; font-size: 10px; line-height: 1.35; color: #6b8090; }
-    .download-item {
+    .setting-note { margin: 6px 0 0 22px; font-size: 10px; line-height: 1.35; color: #6b8090; }    .download-item {
       display: flex;
       align-items: flex-start;
       gap: 8px;
