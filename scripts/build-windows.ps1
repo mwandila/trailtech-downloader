@@ -27,6 +27,7 @@ foreach ($tool in 'yt-dlp.exe', 'ffmpeg.exe', 'ffprobe.exe') {
 }
 Compress-Archive -Path (Join-Path $appRoot '*') -DestinationPath (Join-Path $stageRoot 'app.zip') -CompressionLevel Optimal
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot '..\packaging\windows\install.ps1') -Destination (Join-Path $stageRoot 'install.ps1')
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot '..\packaging\windows\run-install.vbs') -Destination (Join-Path $stageRoot 'run-install.vbs')
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot '..\packaging\windows\start-engine.vbs') -Destination (Join-Path $stageRoot 'start-engine.vbs')
 
 $sedPath = Join-Path $workRoot 'TVD-Setup.sed'
@@ -61,7 +62,7 @@ DisplayLicense=
 FinishMessage=
 TargetName=$setupPath
 FriendlyName=Trail Video Downloader Setup
-AppLaunched=powershell.exe -NoLogo -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File install.ps1
+AppLaunched=wscript.exe run-install.vbs
 PostInstallCmd=<None>
 AdminQuietInstCmd=
 UserQuietInstCmd=
@@ -72,6 +73,7 @@ FILE3="start-engine.vbs"
 FILE4="yt-dlp.exe"
 FILE5="ffmpeg.exe"
 FILE6="ffprobe.exe"
+FILE7="run-install.vbs"
 [SourceFiles]
 SourceFiles0=$stageRoot\
 [SourceFiles0]
@@ -82,6 +84,7 @@ SourceFiles0=$stageRoot\
 %FILE4%=
 %FILE5%=
 %FILE6%=
+%FILE7%=
 "@
 Set-Content -LiteralPath $sedPath -Value $sed -Encoding ASCII
 $reportPath = Join-Path $distRoot "~$($setupBase).RPT"
