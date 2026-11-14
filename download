@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en-US" class="" data-skin="light">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='preload' as='script' href='https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.8 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Chile One - Tukalasekafye Mp3 Download</title>
+	<meta name="description" content="Discover the soulful track Tukalasekafye by Chile One from the Destiny album. Get to know Chile One Tukalasekafye and enjoy authentic Zambian vibes." />
+	<link rel="canonical" href="https://zedwap.co/chile-one-tukalasekafye/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Chile One - Tukalasekafye Mp3 Download" />
+	<meta property="og:description" content="Discover the soulful track Tukalasekafye by Chile One from the Destiny album. Get to know Chile One Tukalasekafye and enjoy authentic Zambian vibes." />
+	<meta property="og:url" content="https://zedwap.co/chile-one-tukalasekafye/" />
+	<meta property="og:site_name" content="Zedwap Music" />
+	<meta property="article:publisher" content="https://facebook.com/zedwapofficialpage/" />
+	<meta property="article:author" content="http://facebook.com/zedwapofficialpage" />
+	<meta property="article:published_time" content="2026-10-31T08:52:56+02:00" />
+	<meta property="og:image" content="https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000.jpg" />
+	<meta property="og:image:width" content="1080" />
+	<meta property="og:image:height" content="1080" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Zedwap Media" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@zedwapofficial" />
+	<meta name="twitter:site" content="@zedwapofficial" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Zedwap Media" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#article","isPartOf":{"@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/"},"author":{"name":"Zedwap Media","@id":"https:\/\/zedwap.co\/#\/schema\/person\/db87232ea9468c215db9c80d7dc947c0"},"headline":"Chile One – Tukalasekafye","datePublished": "2026-10-31T08:52:56+02:00","mainEntityOfPage":{"@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/"},"wordCount":164,"commentCount":1,"publisher":{"@id":"https:\/\/zedwap.co\/#organization"},"image":{"@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#primaryimage"},"thumbnailUrl":"https:\/\/zedwap.co\/wp-content\/uploads\/2026\/08\/IMG-20260828-WA0000.jpg","keywords":["Chile One","Chile One Mr Zambia"],"articleSection":["Mp3 Juice","Music"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https:\/\/zedwap.co\/chile-one-tukalasekafye\/#respond"]}]},{"@type":"WebPage","@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/","url":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/","name":"Chile One - Tukalasekafye Mp3 Download","isPartOf":{"@id":"https:\/\/zedwap.co\/#website"},"primaryImageOfPage":{"@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#primaryimage"},"image":{"@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#primaryimage"},"thumbnailUrl":"https:\/\/zedwap.co\/wp-content\/uploads\/2026\/08\/IMG-20260828-WA0000.jpg","datePublished": "2026-10-31T08:52:56+02:00","description":"Discover the soulful track Tukalasekafye by Chile One from the Destiny album. Get to know Chile One Tukalasekafye and enjoy authentic Zambian vibes.","breadcrumb":{"@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/zedwap.co\/chile-one-tukalasekafye\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#primaryimage","url":"https:\/\/zedwap.co\/wp-content\/uploads\/2026\/08\/IMG-20260828-WA0000.jpg","contentUrl":"https:\/\/zedwap.co\/wp-content\/uploads\/2026\/08\/IMG-20260828-WA0000.jpg","width":1080,"height":1080,"caption":"Chile One – Destiny (Album & Zip)"},{"@type":"BreadcrumbList","@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/zedwap.co\/"},{"@type":"ListItem","position":2,"name":"Music","item":"https:\/\/zedwap.co\/download-latest-zambian-music\/"},{"@type":"ListItem","position":3,"name":"Chile One – Tukalasekafye"}]},{"@type":"WebSite","@id":"https:\/\/zedwap.co\/#website","url":"https:\/\/zedwap.co\/","name":"Zedwap Music","description":"Download Latest Zambian Music In 2025 &amp; 2026 Mp3 Download","publisher":{"@id":"https:\/\/zedwap.co\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/zedwap.co\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/zedwap.co\/#organization","name":"Zedwap Media","url":"https:\/\/zedwap.co\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/zedwap.co\/#\/schema\/logo\/image\/","url":"https:\/\/zedwap.co\/wp-content\/uploads\/2022\/04\/zedwap-logo-cover.jpg","contentUrl":"https:\/\/zedwap.co\/wp-content\/uploads\/2022\/04\/zedwap-logo-cover.jpg","width":640,"height":640,"caption":"Zedwap Media"},"image":{"@id":"https:\/\/zedwap.co\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/facebook.com\/zedwapofficialpage\/","https:\/\/x.com\/zedwapofficial","https:\/\/instagram.com\/zedwapofficial\/","https:\/\/pinterest.com\/zedwapofficial\/"]},{"@type":"Person","@id":"https:\/\/zedwap.co\/#\/schema\/person\/db87232ea9468c215db9c80d7dc947c0","name":"Zedwap Media","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/secure.gravatar.com\/avatar\/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=96&r=g","url":"https:\/\/secure.gravatar.com\/avatar\/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=96&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=96&r=g","caption":"Zedwap Media"},"description":"Austin Mwiilu Jr better known as Zedwap is a Zambia professional music publisher and entrepreneur. “I love to talk about music, so I use my leisure time to blog. Call Me +260961418496","sameAs":["https:\/\/zedwap.co\/","http:\/\/facebook.com\/zedwapofficialpage","http:\/\/Instagram.com\/zedwapofficial","https:\/\/pin.it\/3BUIqTq","https:\/\/x.com\/zedwapofficial","https:\/\/youtube.com\/c\/ZedwapMedia"],"url":"https:\/\/zedwap.co\/author\/zedwap-exclusive\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn-uicons.flaticon.com' />
+
+<link rel="alternate" type="application/rss+xml" title="Zedwap Music &raquo; Feed" href="https://zedwap.co/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Zedwap Music &raquo; Comments Feed" href="https://zedwap.co/comments/feed/" />
+		<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">
+			try {
+				if( 'undefined' != typeof localStorage ){
+					var tieSkin = localStorage.getItem('tie-skin');
+				}
+
+				
+				var html = document.getElementsByTagName('html')[0].classList,
+						htmlSkin = 'light';
+
+				if( html.contains('dark-skin') ){
+					htmlSkin = 'dark';
+				}
+
+				if( tieSkin != null && tieSkin != htmlSkin ){
+					html.add('tie-skin-inverted');
+					var tieSkinInverted = true;
+				}
+
+				if( tieSkin == 'dark' ){
+					html.add('dark-skin');
+				}
+				else if( tieSkin == 'light' ){
+					html.remove( 'dark-skin' );
+				}
+				
+			} catch(e) { console.log( e ) }
+
+		</script>
+		<link rel="alternate" type="application/rss+xml" title="Zedwap Music &raquo; Chile One – Tukalasekafye Comments Feed" href="https://zedwap.co/chile-one-tukalasekafye/feed/" />
+
+		<style type="text/css">
+			:root{				
+			--tie-preset-gradient-1: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--tie-preset-gradient-2: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--tie-preset-gradient-3: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--tie-preset-gradient-4: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--tie-preset-gradient-5: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--tie-preset-gradient-6: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--tie-preset-gradient-7: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--tie-preset-gradient-8: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--tie-preset-gradient-9: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--tie-preset-gradient-10: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--tie-preset-gradient-11: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--tie-preset-gradient-12: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--tie-preset-gradient-13: linear-gradient(135deg, #4D34FA, #ad34fa);
+			--tie-preset-gradient-14: linear-gradient(135deg, #0057FF, #31B5FF);
+			--tie-preset-gradient-15: linear-gradient(135deg, #FF007A, #FF81BD);
+			--tie-preset-gradient-16: linear-gradient(135deg, #14111E, #4B4462);
+			--tie-preset-gradient-17: linear-gradient(135deg, #F32758, #FFC581);
+
+			
+					--main-nav-background: #FFFFFF;
+					--main-nav-secondry-background: rgba(0,0,0,0.03);
+					--main-nav-primary-color: #0088ff;
+					--main-nav-contrast-primary-color: #FFFFFF;
+					--main-nav-text-color: #2c2f34;
+					--main-nav-secondry-text-color: rgba(0,0,0,0.5);
+					--main-nav-main-border-color: rgba(0,0,0,0.1);
+					--main-nav-secondry-border-color: rgba(0,0,0,0.08);
+				--tie-buttons-color: transparent;--tie-buttons-border-width: 1px;
+			}
+		</style>
+	<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://zedwap.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzedwap.co%2Fchile-one-tukalasekafye%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://zedwap.co/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzedwap.co%2Fchile-one-tukalasekafye%2F&#038;format=xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" /><style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--global-color: #0a0a0a;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-global-color-color{color: var(--wp--preset--color--global-color) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-global-color-background-color{background-color: var(--wp--preset--color--global-color) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-global-color-border-color{border-color: var(--wp--preset--color--global-color) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='cookie-law-info-css' href='https://zedwap.co/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-public.css?ver=3.5.8' media='all' />
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='https://zedwap.co/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-gdpr.css?ver=3.5.8' media='all' />
+<link rel='stylesheet' id='gn-frontend-gnfollow-style-css' href='https://zedwap.co/wp-content/plugins/gn-publisher/assets/css/gn-frontend-gnfollow.min.css?ver=1.5.30' media='all' />
+<link rel='stylesheet' id='jannah-qa-frontend-css' href='https://zedwap.co/wp-content/plugins/jannah-qa-pro-by-pedro/assets/frontend.css?ver=1.0.1' media='all' />
+<link rel='stylesheet' id='uicons-css' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css?ver=7.1.4' media='all' />
+<link rel='stylesheet' id='wpdiscuz-frontend-css-css' href='https://zedwap.co/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.6.74' media='all' />
+<style id="wpdiscuz-frontend-css-inline-css">
+ #wpdcom .wpd-blog-administrator .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-administrator .wpd-comment-author, #wpdcom .wpd-blog-administrator .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-administrator .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-administrator{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-administrator .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-administrator .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-administrator .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-editor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-editor .wpd-comment-author, #wpdcom .wpd-blog-editor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-editor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-editor{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-editor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-editor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-editor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-author .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-author .wpd-comment-author, #wpdcom .wpd-blog-author .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-author .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-author .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-author .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-contributor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-contributor .wpd-comment-author, #wpdcom .wpd-blog-contributor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-contributor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-contributor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-contributor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-contributor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-subscriber .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-subscriber .wpd-comment-author, #wpdcom .wpd-blog-subscriber .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-subscriber .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-subscriber .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom .wpd-blog-person .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-person .wpd-comment-author, #wpdcom .wpd-blog-person .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-person .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-person .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-person .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-person .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-customer .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-customer .wpd-comment-author, #wpdcom .wpd-blog-customer .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-customer .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-customer .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-customer .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-customer .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-shop_manager .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-shop_manager .wpd-comment-author, #wpdcom .wpd-blog-shop_manager .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-shop_manager .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-shop_manager .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-shop_manager .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-shop_manager .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-armember .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-armember .wpd-comment-author, #wpdcom .wpd-blog-armember .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-armember .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-armember .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-armember .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-armember .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-wpseo_manager .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-wpseo_manager .wpd-comment-author, #wpdcom .wpd-blog-wpseo_manager .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-wpseo_manager .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-wpseo_manager .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-wpseo_manager .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-wpseo_manager .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-wpseo_editor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-wpseo_editor .wpd-comment-author, #wpdcom .wpd-blog-wpseo_editor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-wpseo_editor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-wpseo_editor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-wpseo_editor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-wpseo_editor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-post_author .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-post_author .wpd-comment-author, #wpdcom .wpd-blog-post_author .wpd-comment-author a{color:#00B38F}#wpdcom .wpd-blog-post_author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-post_author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-post_author{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-post_author .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-post_author .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-post_author .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-guest .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-guest .wpd-comment-author, #wpdcom .wpd-blog-guest .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-guest .wpd-comment-subheader{border-top:1px dashed #00B38F}#comments, #respond, .comments-area, #wpdcom{}#wpdcom .ql-editor > *{color:#777777}#wpdcom .ql-editor::before{}#wpdcom .ql-toolbar{border:1px solid #DDDDDD;border-top:none}#wpdcom .ql-container{border:1px solid #DDDDDD;border-bottom:none}#wpdcom .wpd-form-row .wpdiscuz-item input[type="text"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="email"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="url"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="color"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="date"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="datetime"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="datetime-local"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="month"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="number"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="time"], #wpdcom textarea, #wpdcom select{border:1px solid #DDDDDD;color:#777777}#wpdcom .wpd-form-row .wpdiscuz-item textarea{border:1px solid #DDDDDD}#wpdcom input::placeholder, #wpdcom textarea::placeholder, #wpdcom input::-moz-placeholder, #wpdcom textarea::-webkit-input-placeholder{}#wpdcom .wpd-comment-text{color:#777777}#wpdcom .wpd-thread-head .wpd-thread-info{border-bottom:2px solid #00B38F}#wpdcom .wpd-thread-head .wpd-thread-info.wpd-reviews-tab svg{fill:#00B38F}#wpdcom .wpd-thread-head .wpdiscuz-user-settings{border-bottom:2px solid #00B38F}#wpdcom .wpd-thread-head .wpdiscuz-user-settings:hover{color:#00B38F}#wpdcom .wpd-comment .wpd-follow-link:hover{color:#00B38F}#wpdcom .wpd-comment-status .wpd-sticky{color:#00B38F}#wpdcom .wpd-thread-filter .wpdf-active{color:#00B38F;border-bottom-color:#00B38F}#wpdcom .wpd-inline-filter-cta{border:1px dashed #33c3a6;background:#e6f8f4}#wpdcom .wpd-inline-filter-cta .wpd-current-view i{color:#00B38F}#wpdcom .wpd-filter-view-all:hover{background:#00B38F}#wpdcom .wpdiscuz-item .wpdiscuz-rating > label{color:#DDDDDD}#wpdcom .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover, .wpdiscuz-rating:not(:checked) > label:hover ~ label{}#wpdcom .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color:#FFED85}#wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-active-star, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{color:#FFD700}.wpd-post-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-star{fill:#DDDDDD}.wpd-post-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-active{fill:#FFD700}.wpd-post-rating .wpd-rating-wrap .wpd-rate-starts svg .wpd-star{fill:#DDDDDD}.wpd-post-rating .wpd-rating-wrap .wpd-rate-starts:hover svg .wpd-star{fill:#FFED85}.wpd-post-rating.wpd-not-rated .wpd-rating-wrap .wpd-rate-starts svg:hover ~ svg .wpd-star{fill:#DDDDDD}.wpdiscuz-post-rating-wrap .wpd-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-star{fill:#DDDDDD}.wpdiscuz-post-rating-wrap .wpd-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-active{fill:#FFD700}#wpdcom .wpd-comment .wpd-follow-active{color:#ff7a00}#wpdcom .page-numbers{color:#555;border:#555 1px solid}#wpdcom span.current{background:#555}#wpdcom.wpd-layout-1 .wpd-new-loaded-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap > .wpd-comment-right{background:transparent}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap{background:#FFFAD6}#wpdcom.wpd-layout-3 .wpd-new-loaded-comment.wpd-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom .wpd-follow:hover i, #wpdcom .wpd-unfollow:hover i, #wpdcom .wpd-comment .wpd-follow-active:hover i{color:#00B38F}#wpdcom .wpdiscuz-readmore{cursor:pointer;color:#00B38F}.wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label{color:#DDDDDD}.wpd-wrapper .wpd-list-item.wpd-active{border-top:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply.wpd-unapproved-comment .wpd-comment-wrap{border-left:3px solid #FFFAD6}#wpdcom.wpd-layout-3 .wpd-comment.wpd-reply.wpd-unapproved-comment .wpd-comment-right{border-left:1px solid #FFFAD6}#wpdcom .wpd-prim-button{background-color:#07B290;color:#FFFFFF}#wpdcom .wpd_label__check i.wpdicon-on{color:#07B290;border:1px solid #83d9c8}#wpd-bubble-wrapper #wpd-bubble-all-comments-count{color:#1DB99A}#wpd-bubble-wrapper > div{background-color:#1DB99A}#wpd-bubble-wrapper > #wpd-bubble #wpd-bubble-add-message{background-color:#1DB99A}#wpd-bubble-wrapper > #wpd-bubble #wpd-bubble-add-message::before{border-left-color:#1DB99A;border-right-color:#1DB99A}#wpd-bubble-wrapper.wpd-right-corner > #wpd-bubble #wpd-bubble-add-message::before{border-left-color:#1DB99A;border-right-color:#1DB99A}.wpd-inline-icon-wrapper path.wpd-inline-icon-first{fill:#1DB99A}.wpd-inline-icon-count{background-color:#1DB99A}.wpd-inline-icon-count::before{border-right-color:#1DB99A}.wpd-inline-form-wrapper::before{border-bottom-color:#1DB99A}.wpd-inline-form-question{background-color:#1DB99A}.wpd-inline-form{background-color:#1DB99A}.wpd-last-inline-comments-wrapper{border-color:#1DB99A}.wpd-last-inline-comments-wrapper::before{border-bottom-color:#1DB99A}.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments{background:#1DB99A}.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:hover,.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:active,.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:focus{background-color:#1DB99A}#wpdcom .ql-snow .ql-tooltip[data-mode="link"]::before{content:"Enter link:"}#wpdcom .ql-snow .ql-tooltip.ql-editing a.ql-action::after{content:"Save"}.comments-area{width:auto}
+/*# sourceURL=wpdiscuz-frontend-css-inline-css */
+</style>
+<link rel='stylesheet' id='wpdiscuz-fa-css' href='https://zedwap.co/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.6.74' media='all' />
+<link rel='stylesheet' id='wpdiscuz-combo-css-css' href='https://zedwap.co/wp-content/plugins/wpdiscuz/assets/css/wpdiscuz-combo-no_quill.min.css?ver=7.1.4' media='all' />
+<link rel='stylesheet' id='forget-about-shortcode-buttons-css' href='https://zedwap.co/wp-content/plugins/forget-about-shortcode-buttons/public/css/button-styles.css?ver=2.1.3' media='all' />
+<link rel='stylesheet' id='tie-css-base-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/base.min.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-css-styles-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/style.min.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-css-widgets-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/widgets.min.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-css-helpers-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/helpers.min.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-fontawesome5-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/fontawesome.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-css-ilightbox-css' href='https://zedwap.co/wp-content/themes/jannah/assets/ilightbox/dark-skin/skin.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-css-single-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/single.min.css?ver=7.6.8' media='all' />
+<link rel='stylesheet' id='tie-css-print-css' href='https://zedwap.co/wp-content/themes/jannah/assets/css/print.css?ver=7.6.8' media='print' />
+<style id="tie-css-print-inline-css">
+.wf-active .logo-text,.wf-active h1,.wf-active h2,.wf-active h3,.wf-active h4,.wf-active h5,.wf-active h6,.wf-active .the-subtitle{font-family: 'Poppins';}#tie-body{background-color: #ffffff;background-image: -webkit-linear-gradient(45deg,#ffffff,#ffffff);background-image: linear-gradient(45deg,#ffffff,#ffffff);}:root:root{--brand-color: #0a0a0a;--dark-brand-color: #000000;--bright-color: #FFFFFF;--base-color: #2c2f34;}#reading-position-indicator{box-shadow: 0 0 10px rgba( 10,10,10,0.7);}:root:root{--brand-color: #0a0a0a;--dark-brand-color: #000000;--bright-color: #FFFFFF;--base-color: #2c2f34;}#reading-position-indicator{box-shadow: 0 0 10px rgba( 10,10,10,0.7);}::-moz-selection{background-color: #ff3030;color: #FFFFFF;}::selection{background-color: #ff3030;color: #FFFFFF;}#content a:hover{text-decoration: underline !important;}#tie-container a.post-title:hover,#tie-container .post-title a:hover,#tie-container .thumb-overlay .thumb-title a:hover{background-size: 100% 2px;text-decoration: none !important;}a.post-title,.post-title a{background-image: linear-gradient(to bottom,#000 0%,#000 98%);background-size: 0 1px;background-repeat: no-repeat;background-position: left 100%;color: #000;}.dark-skin a.post-title,.dark-skin .post-title a{color: #fff;background-image: linear-gradient(to bottom,#fff 0%,#fff 98%);}.more-link,.button,[type='submit'],.generic-button a,.generic-button button{background: transparent;}#header-notification-bar{background: var( --tie-preset-gradient-8 );}.main-nav-boxed .main-nav.fixed-nav,#main-nav .main-menu-wrapper{background: #b0000c;background: -webkit-linear-gradient(90deg,#ff3030,#b0000c );background: -moz-linear-gradient(90deg,#ff3030,#b0000c );background: -o-linear-gradient(90deg,#ff3030,#b0000c );background: linear-gradient(90deg,#b0000c,#ff3030 );}#main-nav .main-menu-wrapper .icon-basecloud-bg:after{color: inherit !important;}#main-nav .main-menu-wrapper,#main-nav .menu-sub-content,#main-nav .comp-sub-menu,#main-nav ul.cats-vertical li a.is-active,#main-nav ul.cats-vertical li a:hover,#autocomplete-suggestions.search-in-main-nav{background-color: rgb(216,24,30);}#main-nav{border-width: 0;}#theme-header #main-nav:not(.fixed-nav){bottom: 0;}#main-nav .icon-basecloud-bg:after{color: rgb(216,24,30);}#autocomplete-suggestions.search-in-main-nav{border-color: rgba(255,255,255,0.07);}.main-nav-boxed #main-nav .main-menu-wrapper{border-width: 0;}#main-nav a:not(:hover),#main-nav a.social-link:not(:hover) span,#main-nav .dropdown-social-icons li a span,#autocomplete-suggestions.search-in-main-nav a{color: #ffffff;}#footer{margin-top: 000000px;}.post-cat{background-color:#0a0000 !important;color:#FFFFFF !important;}@media (min-width: 1200px){.container{width: auto;}}.boxed-layout #tie-wrapper,.boxed-layout .fixed-nav{max-width: 1130px;}@media (min-width: 1100px){.container,.wide-next-prev-slider-wrapper .slider-main-container{max-width: 1100px;}}.meta-views.meta-item .tie-icon-fire:before{content: "\f06e" !important;}#respond .comment-form-email {width: 100% !important;float: none !important;}
+/*# sourceURL=tie-css-print-inline-css */
+</style>
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://zedwap.co/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<script id="jquery-core-js" src="https://zedwap.co/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://zedwap.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script id="cookie-law-info-js-extra">
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[],"non_necessary_cookies":[],"ccpaEnabled":"1","ccpaRegionBased":"","ccpaBarEnabled":"1","strictlyEnabled":["necessary","obligatoire"],"ccpaType":"ccpa_gdpr","js_blocking":"","custom_integration":"","triggerDomRefresh":"","secure_cookies":"","is_scan":""};
+var cli_cookiebar_settings = {"animate_speed_hide":"500","animate_speed_show":"500","background":"#FFF","border":"#b1a6a6c2","border_on":"","button_1_button_colour":"#81d742","button_1_button_hover":"#67ac35","button_1_link_colour":"#fff","button_1_as_button":"1","button_1_new_win":"","button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#1e73be","button_2_as_button":"","button_2_hidebar":"","button_3_button_colour":"#dd3333","button_3_button_hover":"#b12929","button_3_link_colour":"#fff","button_3_as_button":"1","button_3_new_win":"","button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":"","button_7_button_colour":"#61a229","button_7_button_hover":"#4e8221","button_7_link_colour":"#fff","button_7_as_button":"1","button_7_new_win":"","font_family":"inherit","header_fix":"","notify_animate_hide":"1","notify_animate_show":"1","notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":"1","scroll_close_reload":"","accept_close_reload":"","reject_close_reload":"","showagain_tab":"1","showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":"1","show_once":"10000","logging_on":"","as_popup":"","popup_overlay":"","bar_heading_text":"","cookie_bar_as":"popup","popup_showagain_position":"bottom-right","widget_position":"left"};
+var log_object = {"ajax_url":"https://zedwap.co/wp-admin/admin-ajax.php"};
+//# sourceURL=cookie-law-info-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="cookie-law-info-js" data-rocket-src="https://zedwap.co/wp-content/plugins/cookie-law-info/legacy/public/js/cookie-law-info-public.js?ver=3.5.8"></script>
+<script id="cookie-law-info-ccpa-js-extra">
+var ccpa_data = {"opt_out_prompt":"Do you really wish to opt out?","opt_out_confirm":"Confirm","opt_out_cancel":"Cancel"};
+//# sourceURL=cookie-law-info-ccpa-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="cookie-law-info-ccpa-js" data-rocket-src="https://zedwap.co/wp-content/plugins/cookie-law-info/legacy/admin/modules/ccpa/assets/js/cookie-law-info-ccpa.js?ver=3.5.8"></script>
+<link rel="https://api.w.org/" href="https://zedwap.co/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://zedwap.co/wp-json/wp/v2/posts/127630" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zedwap.co/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.4" />
+<link rel='shortlink' href='https://zedwap.co/?p=127630' />
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MusicRecording","name":"Tukalasekafye","url":"https://zedwap.co/chile-one-tukalasekafye/","description":"44G Music artist Chile One Mr Zambia has delivered a fresh vibe with his song &#8220;Tukalasekafye&#8221; from the recently released album Destiny. The track stands out as a heartfelt solo effort, reflecting the depth and versatility that Chile One brings to the Zambian music scene. Fans looking for authentic sounds will find &#8220;Tukalasekafye&#8221; a compelling &hellip;","byArtist":{"@type":"MusicGroup","name":"Chile One"},"inAlbum":{"@type":"MusicAlbum","name":"Destiny"},"duration":"00:03:34","datePublished": "2026-10-31T08:52:56+02:00"}</script>
+<style>
+    /**Song Widgets */
+    .njl-music-widget {
+        display: block;
+        background: none repeat scroll 0 0 #050505;
+        border: 1px solid #ccc;
+        padding: 15px;
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .njl-music-widget::before {
+        content: "";
+        display: block;
+        height: 14px;
+        width: 100px;
+        background: url(https://zedwap.co/wp-content/uploads/2022/06/zedwap-logo-cover.jpg) no-repeat;
+        background-size: contain;
+        background-position: right;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+    }
+    .njl-music-widget .artwork {
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        float: left;
+        top: 10px;
+        line-height: 0;
+        margin-right: 5px;
+        margin-bottom: 15px;
+        width: 100px;
+        height: 100px;
+    }
+    .njl-music-widget .artwork img {
+        display: none;
+    }
+    .njl-music-widget .details {
+        display: block;
+        line-height: 20px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        color: #fff;
+        padding-top: 17px;
+        padding-left: 10px;
+    }
+    .njl-music-widget .details .song {
+        font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+        display: block;
+        font-weight: 800;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+    .njl-music-widget .details .artist {
+        font-size: 14px;
+        font-weight: normal;
+    }
+   .njl-music-widget .player-wrapper {
+        display: block;
+    }
+    .njl-music-widget .player-wrapper br {
+        display: none;
+    }
+    .njl-music-widget .mejs-container {
+        margin: 0 !important;
+    }
+    .download-btn-wrapper {
+        display: block;
+        text-align: center;
+    }
+    @media (min-width: 992px) {
+        .njl-music-widget .artwork {
+            margin-bottom: 0;
+            height: 130px;
+            width: 25%;
+        }
+        .njl-music-widget .details {
+            padding-top: 15px;
+        }
+        .njl-music-widget .mejs-container {
+            width: 72% !important;
+            float: right;
+            margin-top: -52px !important;
+        }
+        .njl-music-widget::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+.mejs-currenttime, .mejs-duration, .artist, .song {color: #fff;}
+</style><style>
+ul.table.disclosure a.btn-ghost, a.btn-ghost {
+    background: #ff0000 !important;
+    position: relative;
+    border: 1px solid #ff0000 !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    padding: 5px 45px 5px 10px !important;
+    letter-spacing: 0 !important;
+}
+ul.table.disclosure a.btn-ghost::after, a.btn-ghost::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    height: 35px;
+    width: 35px;
+    background: url(/wp-content/plugins/darkng-custom/includes/Images/download_arrow.gif) no-repeat !important;
+    background-size: 35px !important;
+}
+a.btn-ghost1:hover {
+    background: #bf0d0d !important;
+    border: 1px solid #bf0d0d !important;
+    color: #fff !important;
+}
+</style><style>.download-song-bar {
+        background: #f0f0f0;
+        display: block;
+        text-align: center;
+        color: #FF0000;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-top: 33px;
+        margin-bottom: -15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .download-song-bar img {
+        height: 16px;
+        padding-right: 5px;
+    }</style><script type="text/rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://c0.wp.com/c/5.7/wp-includes/js/mediaelement/mediaelement-and-player.min.js' id='mediaelement-core-js'></script><script type="text/rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://c0.wp.com/c/5.7/wp-includes/js/mediaelement/mediaelement-migrate.min.js' id='mediaelement-migrate-js'></script><script type="text/rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://c0.wp.com/c/5.7/wp-includes/js/mediaelement/wp-mediaelement.min.js' id='wp-mediaelement-js'></script><link rel='stylesheet' id='mediaelement-css'  href='https://c0.wp.com/c/5.7/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='https://c0.wp.com/c/5.7/wp-includes/js/mediaelement/wp-mediaelement.min.css' type='text/css' media='all' /><script type='text/javascript' src='https://c0.wp.com/c/5.7/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-194336618-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-194336618-1');
+</script> 
+<meta name="p:domain_verify" content="f175e6724de13902cbcb3012011d9799"/>
+<meta name="google-site-verification" content="fdzJ29iInWQozPhfzS36qlVlCdDaa2i3waDnHECzOoY" />
+
+<meta name='dmca-site-verification' content='cDM1ZFdleTg4bUcra0FYVkFZSzZ1UT090' />
+
+<script type="text/rocketlazyloadscript" data-cfasync="false" data-rocket-src="//dpjf9a2rbjbvp.cloudfront.net/?afjpd=1254142"></script><meta http-equiv="X-UA-Compatible" content="IE=edge"><div id='zone_1173466959' ></div>
+<script type="text/rocketlazyloadscript">
+    (function(w,d,o,g,r,a,m){
+        var cid='zone_1173466959';
+        w[r]=w[r]||function(){(w[r+'l']=w[r+'l']||[]).push(arguments)};
+        function e(b,w,r){if((w[r+'h']=b.pop())&&!w.ABN){
+            var a=d.createElement(o),p=d.getElementsByTagName(o)[0];a.async=1;
+            a.src='https://cdn.'+w[r+'h']+'/libs/e.js';a.onerror=function(){e(g,w,r)};
+            p.parentNode.insertBefore(a,p)}}e(g,w,r);
+        w[r](cid,{id:1173466959,domain:w[r+'h']});
+    })(window,document,'script',['ftd.agency'],'ABNS');
+</script>
+
+<link rel="icon" href="https://zedwap.co/wp-content/uploads/2026/03/cropped-ZedWap-LOGO-REDO-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://zedwap.co/wp-content/uploads/2026/03/cropped-ZedWap-LOGO-REDO-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://zedwap.co/wp-content/uploads/2026/03/cropped-ZedWap-LOGO-REDO-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://zedwap.co/wp-content/uploads/2026/03/cropped-ZedWap-LOGO-REDO-270x270.jpg" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+<meta property="og:published_time" content="2026-10-31T08:52:56+02:00" /><meta name="generator" content="WP Rocket 3.24" data-wpr-features="wpr_delay_js wpr_lazyload_iframes wpr_image_dimensions wpr_cdn wpr_desktop" /></head>
+
+<style> 
+.verified-badge {
+    color: #1879f2; 
+    margin-left: 2px;
+    font-size: 1.1em;
+    vertical-align: -2px;
+}
+
+</style> 
+
+
+<style>       
+        .nav-menu-Pedro {
+            display: flex;
+            overflow-x: auto; /* Enables horizontal scrolling */
+            white-space: nowrap; /* Prevents items from wrapping to the next line */
+            background-color: #000; /* Black background */
+            padding: 10px 0;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        .nav-menu-Pedro::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
+        }
+        .nav-item-Pedro {
+            background-color: #000; /* Match background color */
+            color: #fff; /* White text color */
+            padding: 10px 15px;
+            margin: 0 5px;
+            border: 1px solid #555; 
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: normal;
+            text-align: center;
+            font-family: Arial, sans-serif; /* Match font family */
+            font-size: 14px; 
+            flex-shrink: 0; /* Prevents items from shrinking */
+        }
+        .nav-item-Pedro:hover {
+            background-color: #333; 
+            color: white;
+        }
+    </style>
+
+
+<body id="tie-body" class="wp-singular post-template-default single single-post postid-127630 single-format-standard wp-custom-logo wp-theme-jannah wp-child-theme-jannah-child tie-no-js boxed-layout framed-layout wrapper-has-shadow block-head-4 block-head-5 magazine2 zedwap is-thumb-overlay-disabled is-desktop is-header-layout-2 sidebar-right has-sidebar post-layout-1 narrow-title-narrow-media is-standard-format">
+
+
+
+<div data-rocket-location-hash="e5b8de42769b3d7311e4c77717550b26" class="background-overlay">
+
+	<div data-rocket-location-hash="20f4eca15480f982a53dda1cb4873ede" id="tie-container" class="site tie-container">
+
+		
+		<div data-rocket-location-hash="3cd18522b647fd3b2d7c4710f4fe6515" id="tie-wrapper">
+
+			
+<header id="theme-header" class="theme-header header-layout-2 main-nav-light main-nav-default-light main-nav-below main-nav-boxed no-stream-item top-nav-active top-nav-light top-nav-default-light top-nav-boxed top-nav-above has-shadow has-normal-width-logo mobile-header-centered mobile-components-row">
+	
+<nav id="top-nav"  class="has-menu-components top-nav header-nav" aria-label="Secondary Navigation">
+	<div class="container">
+		<div class="topbar-wrapper">
+
+			
+			<div class="tie-alignleft">
+				<div class="top-menu header-menu"><ul id="menu-top-header" class="menu"><li id="menu-item-13435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13435"><a href="https://zedwap.co/about-us/">About Us</a></li>
+<li id="menu-item-13436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13436"><a href="https://zedwap.co/contact-us/">Contact Us</a></li>
+<li id="menu-item-69560" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69560"><a href="https://zedwap.co/advertise/">Advertise On Zedwap</a></li>
+<li id="menu-item-78533" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78533"><a href="https://zedwap.co/guest-posting/">Guest Posting</a></li>
+<li id="menu-item-93518" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93518"><a href="https://zedwap.co/cookie-policy/">Cookie Policy</a></li>
+<li id="menu-item-96991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96991"><a href="https://zedwap.co/dmca/">DMCA</a></li>
+<li id="menu-item-101242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101242"><a href="https://zedwap.co/artists/">Artists</a></li>
+<li id="menu-item-108295" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108295"><a href="https://zedwap.co/forums/">Forum</a></li>
+<li id="menu-item-127123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-127123"><a href="https://zedwap.co/delete-account/">Delete Account</a></li>
+</ul></div>			</div><!-- .tie-alignleft /-->
+
+			<div class="tie-alignright">
+				<ul class="components"> <li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="http://facebook.com/zedwapmusic"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">Facebook</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="http://twitter.com/zedwapmusic"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">X</span></a></li><li class="social-icons-item"><a class="social-link youtube-social-icon" rel="external noopener nofollow" target="_blank" href="https://youtube.com/@zedwapchannel"><span class="tie-social-icon tie-icon-youtube"></span><span class="screen-reader-text">YouTube</span></a></li><li class="social-icons-item"><a class="social-link instagram-social-icon" rel="external noopener nofollow" target="_blank" href="https://instagram.com/zedwapmusic"><span class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">Instagram</span></a></li><li class="social-icons-item"><a class="social-link telegram-social-icon" rel="external noopener nofollow" target="_blank" href="https://t.me/zedwapmusic"><span class="tie-social-icon tie-icon-paper-plane"></span><span class="screen-reader-text">Telegram</span></a></li><li class="social-icons-item"><a class="social-link tiktok-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.tiktok.com/@zedwap/"><span class="tie-social-icon tie-icon-tiktok"></span><span class="screen-reader-text">TikTok</span></a></li> </ul><!-- Components -->			</div><!-- .tie-alignright /-->
+
+		</div><!-- .topbar-wrapper /-->
+	</div><!-- .container /-->
+</nav><!-- #top-nav /-->
+
+<div class="container header-container">
+	<div class="tie-row logo-row">
+
+		
+		<div class="logo-wrapper">
+			<div class="tie-col-md-4 logo-container clearfix">
+				<div id="mobile-header-components-area_1" class="mobile-header-components"><ul class="components"><li class="mobile-component_menu custom-menu-link"><a href="#" id="mobile-menu-icon" class="menu-text-wrapper"><span class="tie-mobile-menu-icon tie-icon-dots-three-vertical"></span><span class="menu-text">Menu</span></a></li></ul></div>
+		<div id="logo" class="image-logo" >
+
+			
+			<a title="Zedwap.com" href="https://zedwap.co/">
+				
+				<picture class="tie-logo-default tie-logo-picture">
+					
+					<source class="tie-logo-source-default tie-logo-source" srcset="https://zedwap.co/wp-content/uploads/2020/04/Zedwap-Logo.png">
+					<img class="tie-logo-img-default tie-logo-img" src="https://zedwap.co/wp-content/uploads/2020/04/Zedwap-Logo.png" alt="Zedwap.com" width="372" height="115" style="max-height:115px; width: auto;" />
+				</picture>
+						</a>
+
+			
+		</div><!-- #logo /-->
+
+		<div id="mobile-header-components-area_2" class="mobile-header-components"><ul class="components"><li class="mobile-component_search custom-menu-link">
+				<a href="#" class="tie-search-trigger-mobile">
+					<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">Search for</span>
+				</a>
+			</li> <li class="mobile-component_skin custom-menu-link">
+				<a href="#" class="change-skin" title="Switch skin">
+					<span class="tie-icon-moon change-skin-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">Switch skin</span>
+				</a>
+			</li></ul></div>			</div><!-- .tie-col /-->
+		</div><!-- .logo-wrapper /-->
+
+		
+	</div><!-- .tie-row /-->
+</div><!-- .container /-->
+
+<div class="main-nav-wrapper">
+	<nav id="main-nav"  class="main-nav header-nav menu-style-line menu-style-minimal"  aria-label="Primary Navigation">
+		<div class="container">
+
+			<div class="main-menu-wrapper">
+
+				
+				<div id="menu-components-wrap">
+
+					
+					<div class="main-menu main-menu-wrap">
+						<div id="main-nav-menu" class="main-menu header-menu"><ul id="menu-main-menu" class="menu"><li id="menu-item-6700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6700"><a href="https://zedwap.co">Home</a></li>
+<li id="menu-item-6701" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-6701 tie-current-menu"><a href="https://zedwap.co/download-latest-zambian-music/">Music</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-25999" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25999"><a href="https://zedwap.co/latest-gospel-songs/">Gospel</a></li>
+</ul>
+</li>
+<li id="menu-item-6703" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6703"><a href="https://zedwap.co/download-latest-zambian-videos/">Videos</a></li>
+<li id="menu-item-26001" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-26001"><a href="https://zedwap.co/album-ep/">Albums/ Compilations</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-25998" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25998"><a href="https://zedwap.co/mixtapes/">Mixtapes</a></li>
+</ul>
+</li>
+<li id="menu-item-63177" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63177"><a href="https://zedwap.co/sports/">Sports</a></li>
+<li id="menu-item-53089" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-53089"><a href="https://zedwap.co/download-mp3-juice/">Mp3 Juice</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-53090" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53090"><a href="https://zedwap.co/malawi-music/">Malawi Music</a></li>
+	<li id="menu-item-53093" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53093"><a href="https://zedwap.co/download-ghana-music/">Ghana Music</a></li>
+	<li id="menu-item-53092" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53092"><a href="https://zedwap.co/tanzania/">Tanzania</a></li>
+	<li id="menu-item-53091" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-53091"><a href="https://zedwap.co/south-african/">South African</a></li>
+</ul>
+</li>
+<li id="menu-item-27767" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-27767"><a href="https://zedwap.co/general-news/">General News</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-76522" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76522"><a href="https://zedwap.co/politics/">Politics</a></li>
+</ul>
+</li>
+<li id="menu-item-93508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93508"><a href="https://zedwap.co/about-us/">About Us</a></li>
+<li id="menu-item-93509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93509"><a href="https://zedwap.co/contact-us/">Contact Us</a></li>
+<li id="menu-item-101237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101237"><a href="https://zedwap.co/artists/">Artists</a></li>
+<li id="menu-item-108285" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108285"><a href="https://zedwap.co/forums/">Forum</a></li>
+<li id="menu-item-127118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-127118"><a href="https://zedwap.co/delete-account/">Delete Account</a></li>
+</ul></div>					</div><!-- .main-menu /-->
+
+					<ul class="components">			<li class="search-compact-icon menu-item custom-menu-link">
+				<a href="#" class="tie-search-trigger">
+					<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">Search for</span>
+				</a>
+			</li>
+			</ul><!-- Components -->
+				</div><!-- #menu-components-wrap /-->
+			</div><!-- .main-menu-wrapper /-->
+		</div><!-- .container /-->
+
+			</nav><!-- #main-nav /-->
+</div><!-- .main-nav-wrapper /-->
+
+</header>
+
+		<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">
+			try{if("undefined"!=typeof localStorage){var header,mnIsDark=!1,tnIsDark=!1;(header=document.getElementById("theme-header"))&&((header=header.classList).contains("main-nav-default-dark")&&(mnIsDark=!0),header.contains("top-nav-default-dark")&&(tnIsDark=!0),"dark"==tieSkin?(header.add("main-nav-dark","top-nav-dark"),header.remove("main-nav-light","top-nav-light")):"light"==tieSkin&&(mnIsDark||(header.remove("main-nav-dark"),header.add("main-nav-light")),tnIsDark||(header.remove("top-nav-dark"),header.add("top-nav-light"))))}}catch(a){console.log(a)}
+		</script>
+		<div id="content" class="site-content container"><div id="main-content-row" class="tie-row main-content-row">
+
+
+<div class="nav-menu-Pedro">
+     <noscript>   <a href="/top-music-chart/top-zambian-songs/" class="nav-item-Pedro">MUSIC CHART (ZM)</a> </noscript> 
+
+<a href="https://zedwap.co/top-songs-today/" class="nav-item-Pedro">MUSIC CHART (ZM)</a>
+
+        <a href="/download-latest-zambian-music" class="nav-item-Pedro">MUSIC</a>
+<a href="/app/" class="nav-item-Pedro">APP</a>        
+        <a href="/album-ep/" class="nav-item-Pedro">ALBUMS</a>
+        <a href="/download-latest-zambian-videos" class="nav-item-Pedro">VIDEOS</a>
+        <a href="/sports" class="nav-item-Pedro">SPORTS</a>        
+        <a href="https://zedwap.co/top-songs-today/" class="nav-item-Pedro">HOT 100 SONGS</a>
+        <a href="https://zedwap.co/request-songs/" class="nav-item-Pedro">REQUEST SONG</a>
+    </div>
+<br>
+
+
+<style> 
+.top-tags-container {
+    margin: 40px 0;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 12px 16px;
+    background-color: #f5f5f5;  /* Light grey background */
+    border-radius: 8px;
+    color: #000; /* Black text by default */
+}
+
+.top-tags-title {
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #222; /* Dark black for heading */
+    margin-bottom: 12px;
+    padding-left: 8px;
+    border-left: 4px solid #f44336;
+    background: linear-gradient(90deg, #fff, #fbe9e7);
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.top-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.top-tag-item {
+    display: inline-block;
+    background-color: #ffffff; /* white background for each tag pill */
+    color: #000000; /* black text */
+    padding: 5px 11px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.top-tag-item:hover {
+    background-color: #f44336; /* nice red on hover */
+    color: #fff; /* white text on hover */
+    border-color: #f44336;
+}
+
+</style> 
+
+    
+
+
+
+<div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+
+	
+	<article id="the-post" class="container-wrapper post-content tie-standard">
+
+		
+<header class="entry-header-outer">
+
+	
+	<div class="entry-header">
+
+		<span class="post-cat-wrap"><a class="post-cat tie-cat-9119" href="https://zedwap.co/download-mp3-juice/">Mp3 Juice</a><a class="post-cat tie-cat-5" href="https://zedwap.co/download-latest-zambian-music/">Music</a></span>
+		<h1 class="post-title entry-title">
+			Chile One – Tukalasekafye		</h1> 
+</div>
+
+<style> 
+            .joinwhatsapp {
+                border: 1px solid #25D366; 
+                border-radius: 2px; 
+                background: #E8F5E9; 
+                display: flex; 
+                align-items: center; 
+                padding: 7px; 
+                justify-content: space-between; 
+                margin: 10px 0; 
+            }
+            .joinwhatsapp a {
+                text-decoration: none; 
+                background: #25D366; 
+                color: #fff !important; 
+                padding: 7px 15px; 
+                border-radius: 2px; 
+                flex-shrink: 0; 
+                font-weight: bold;
+            }
+        </style>
+        
+
+
+<div class="entry-header">
+					<h2 class="entry-sub-title">Chile One – Tukalasekafye Mp3 Download</h2>
+			<div class="single-post-meta post-meta clearfix"><span class="author-meta single-author with-avatars"><span class="meta-item meta-author-wrapper meta-author-19">
+						<span class="meta-author-avatar">
+							<a href="https://zedwap.co/author/zedwap-exclusive/"><img alt='Photo of Zedwap Media' src='https://secure.gravatar.com/avatar/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=140&#038;r=g' srcset='https://secure.gravatar.com/avatar/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=280&#038;r=g 2x' class='avatar avatar-140 photo' height='140' width='140' decoding='async'/></a>
+						</span>
+					<span class="meta-author"><a href="https://zedwap.co/author/zedwap-exclusive/" class="author-name tie-icon" title="Zedwap Media <i class="fi fi-sr-badge-check verified-badge"></i>">Zedwap Media <i class="fi fi-sr-badge-check verified-badge"></i></a></span></span></span><span class="date meta-item tie-icon">October 31, 2026</span><div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">1</span></div></div><!-- .post-meta -->	</div><!-- .entry-header /-->
+
+	
+	
+</header><!-- .entry-header-outer /-->
+
+
+<div  class="featured-area"><div class="featured-area-inner"><figure class="single-featured-image"><img width="1080" height="1080" src="https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000.jpg" class="attachment-full size-full wp-post-image" alt="Chile One – Destiny (Album &amp; Zip)" data-main-img="1" decoding="async" fetchpriority="high" srcset="https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000.jpg 1080w, https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000-300x300.jpg 300w, https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000-1024x1024.jpg 1024w, https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000-150x150.jpg 150w, https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000-768x768.jpg 768w" sizes="(max-width: 1080px) 100vw, 1080px" />
+						<figcaption class="single-caption-text">
+							<span class="tie-icon-camera" aria-hidden="true"></span> Chile One – Destiny (Album & Zip)
+						</figcaption>
+					</figure></div></div>
+		<div class="entry-content entry clearfix">
+
+			
+			<p>44G Music artist <a style="color: red;" href="https://zedwap.co/tag/chile-one/" title="View all posts tagged Chile One">Chile One</a> Mr Zambia has delivered a fresh vibe with his song &#8220;Tukalasekafye&#8221; from the recently released album <em>Destiny</em>. The track stands out as a heartfelt solo effort, reflecting the depth and versatility that Chile One brings to the Zambian music scene. Fans looking for authentic sounds will find &#8220;Tukalasekafye&#8221; a compelling listen.</p>
+<h2>About Tukalasekafye</h2>
+<p>&#8220;Tukalasekafye&#8221; is the twentieth track on Chile One&#8217;s album <em>Destiny</em>, which features a total of twenty-two songs. This album is a special project named after Chile One&#8217;s daughter, adding a personal touch to the work. The song showcases Chile One’s signature style and lyrical ability, making it a memorable addition to his discography.</p>
+<h2>Song Details</h2>
+<table>
+<tbody>
+<tr>
+<th>Artist</th>
+<td>Chile One</td>
+</tr>
+<tr>
+<th>Title</th>
+<td>Tukalasekafye</td>
+</tr>
+<tr>
+<th>Album</th>
+<td>Destiny</td>
+</tr>
+<tr>
+<th>Released Date</th>
+<td>2026-08-28</td>
+</tr>
+<tr>
+<th>Duration</th>
+<td>00:03:34</td>
+</tr>
+<tr>
+<th>Release Type</th>
+<td>Album Track</td>
+</tr>
+</tbody>
+</table>
+<p>Listeners can enjoy &#8220;Tukalasekafye&#8221; as part of the <em>Destiny</em> album experience, which continues to build on Chile One&#8217;s reputation for quality music that resonates with many across Zambia.</p>
+<div class="related-artist-posts" style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;"><h3 style="font-size: 1.2em; margin-bottom: 15px; color: #333;">Also, check more tracks from Chile One on Zedwap Music</h3><ul style="list-style: none; padding: 0; margin: 0;"><li style="margin-bottom: 8px; margin-left:40px; padding: 0;"><a href="https://zedwap.co/swati-patil-ft-chile-one-mr-zambia-miss-me-too/" style="text-decoration: none; color: #2271b1; font-weight: 500;">Swati Patil ft. <a style="color: red;" href="https://zedwap.co/tag/chile-one-mr-zambia/" title="View all posts tagged Chile One Mr Zambia">Chile One Mr Zambia</a> - Miss Me Too</a></li><li style="margin-bottom: 8px; margin-left:40px; padding: 0;"><a href="https://zedwap.co/chile-one-new-songs-2023-download-all-latest-chile-one-songs-2023/" style="text-decoration: none; color: #2271b1; font-weight: 500;">Chile One new Songs 2023 - Download all latest Chile One Songs 2023</a></li><li style="margin-bottom: 8px; margin-left:40px; padding: 0;"><a href="https://zedwap.co/download-mp3-dizmo-ft-chile-one-kale-twasebana/" style="text-decoration: none; color: #2271b1; font-weight: 500;">Dizmo ft. Chile One - Kale Twasebana</a></li><li style="margin-bottom: 8px; margin-left:40px; padding: 0;"><a href="https://zedwap.co/chile-one-iseni-mutambe/" style="text-decoration: none; color: #2271b1; font-weight: 500;">Chile One - Iseni Mutambe</a></li><li style="margin-bottom: 8px; margin-left:40px; padding: 0;"><a href="https://zedwap.co/pentagon-ft-chile-one-remember/" style="text-decoration: none; color: #2271b1; font-weight: 500;">Pentagon ft. Chile One - Remember</a></li></ul></div>        <span class="custom_drk">
+            <span class="njl-music-widget">
+                <span class="artwork" style="background-image: url('https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000.jpg');">
+                    <img width="1080" height="1080" decoding="async" src="https://zedwap.co/wp-content/uploads/2026/08/IMG-20260828-WA0000.jpg" alt="audio">
+                </span>
+                <span class="details">
+                    <span class="song"> Tukalasekafye</span>
+                    <span class="artist">by Chile One</span>
+                </span>
+                <span class="player-wrapper">
+                    <br>
+                    <span class="mejs-offscreen">Audio Player</span>
+                    <div id="mep_0" class="mejs-container mejs-container-keyboard-inactive wp-audio-shortcode mejs-android mejs-audio" tabindex="0" role="application" aria-label="Audio Player" style="width: 344px; height: 40px; min-width: 157px;">
+                        <div class="mejs-inner">                                       
+                            <audio class="wp-audio-shortcode" id="audio-1396-1" preload="none" controls="controls">
+                                <source type="audio/mpeg" src="https://zedwap.co/wp-content/uploads/chile-one-tukalasekafye.mp3" />
+                            </audio>
+                        </div>
+                    </div>
+                    <br>
+                </span>
+            </span>
+        </span>
+        <span class="custom_drk1">
+    <p style="text-align: center;"><strong><a class="fasc-button fasc-size-medium fasc-type-flat fasc-style-bold download-link btn-ghost" id="downloadLink" href="https://zedwap.co/wp-content/uploads/chile-one-tukalasekafye.mp3?download_id=127630" rel="noopener" download>DOWNLOAD MP3</a></strong></p><noscript><p>Download Count: <span id="downloadCount"></span></p></noscript>    <script type="text/rocketlazyloadscript">
+        document.getElementById('downloadLink').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        var downloadCount = parseInt(xhr.responseText);
+                        document.getElementById('downloadCount').innerHTML = downloadCount;
+                    }
+                }
+            };
+            xhr.open('GET', 'https://zedwap.co/chile-one-tukalasekafye/?download_id=127630', true);
+            xhr.send();
+        });
+    </script>
+    <h4><strong>What do you think about this song?</strong></h4>
+    <p>We want to hear from you all.</p>
+    <p>Drop your comments</p>
+    <noscript>
+        <p><h3><a class="download-song-bar" href="/promote" target="_blank" rel="noopener noreferrer nofollow"><img decoding="async" src="https://i.ibb.co/LrhJbhj/upload-32.png" />Upload your Song</a></h3></p>
+    </noscript>
+</span>
+<style>a.btn-ghost {
+    background: #026b14 !important;</style>
+			<div class="post-bottom-meta post-bottom-tags post-tags-modern"><div class="post-bottom-meta-title"><span class="tie-icon-tags" aria-hidden="true"></span> Tags</div><span class="tagcloud"><a href="https://zedwap.co/tag/chile-one/" rel="tag">Chile One</a> <a href="https://zedwap.co/tag/chile-one-mr-zambia/" rel="tag">Chile One Mr Zambia</a></span></div>
+		</div><!-- .entry-content /-->
+
+				<div id="post-extra-info">
+			<div class="theiaStickySidebar">
+				<div class="single-post-meta post-meta clearfix"><span class="author-meta single-author with-avatars"><span class="meta-item meta-author-wrapper meta-author-19">
+						<span class="meta-author-avatar">
+							<a href="https://zedwap.co/author/zedwap-exclusive/"><img alt='Photo of Zedwap Media' src='https://secure.gravatar.com/avatar/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=140&#038;r=g' srcset='https://secure.gravatar.com/avatar/cc7f81a274e0d7606c7112b27c1813a12c1cd8e2173bf4b21018a7125311de8b?s=280&#038;r=g 2x' class='avatar avatar-140 photo' height='140' width='140' decoding='async'/></a>
+						</span>
+					<span class="meta-author"><a href="https://zedwap.co/author/zedwap-exclusive/" class="author-name tie-icon" title="Zedwap Media <i class="fi fi-sr-badge-check verified-badge"></i>">Zedwap Media <i class="fi fi-sr-badge-check verified-badge"></i></a></span></span></span><span class="date meta-item tie-icon">October 31, 2026</span><div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">1</span></div></div><!-- .post-meta -->
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+		<script id="tie-schema-json" type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","dateCreated":"October 31, 2026","datePublished": "2026-10-31T08:52:56+02:00","dateModified": "2026-10-31T08:52:56+02:00","headline":"Chile One \u2013 Tukalasekafye","name":"Chile One \u2013 Tukalasekafye","keywords":"Chile One,Chile One Mr Zambia","url":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/","description":"44G Music artist Chile One Mr Zambia has delivered a fresh vibe with his song \"Tukalasekafye\" from the recently released album Destiny. The track stands out as a heartfelt solo effort, reflecting the","copyrightYear":"October 31, 2026","articleSection":"Mp3 Juice,Music","articleBody":"44G Music artist Chile One Mr Zambia has delivered a fresh vibe with his song \"Tukalasekafye\" from the recently released album Destiny. The track stands out as a heartfelt solo effort, reflecting the depth and versatility that Chile One brings to the Zambian music scene. Fans looking for authentic sounds will find \"Tukalasekafye\" a compelling listen.\r\nAbout Tukalasekafye\r\n\"Tukalasekafye\" is the twentieth track on Chile One's album Destiny, which features a total of twenty-two songs. This album is a special project named after Chile One's daughter, adding a personal touch to the work. The song showcases Chile One\u2019s signature style and lyrical ability, making it a memorable addition to his discography.\r\nSong Details\r\n\r\n\r\n\r\nArtist\r\nChile One\r\n\r\n\r\nTitle\r\nTukalasekafye\r\n\r\n\r\nAlbum\r\nDestiny\r\n\r\n\r\nReleased Date\r\n2026-08-28\r\n\r\n\r\nDuration\r\n00:03:34\r\n\r\n\r\nRelease Type\r\nAlbum Track\r\n\r\n\r\n\r\nListeners can enjoy \"Tukalasekafye\" as part of the Destiny album experience, which continues to build on Chile One's reputation for quality music that resonates with many across Zambia.","publisher":{"@id":"#Publisher","@type":"Organization","name":"Zedwap Music","logo":{"@type":"ImageObject","url":"https:\/\/zedwap.co\/wp-content\/uploads\/2020\/04\/Zedwap-Logo.png"},"sameAs":["http:\/\/facebook.com\/zedwapmusic","http:\/\/twitter.com\/zedwapmusic","https:\/\/youtube.com\/@zedwapchannel","https:\/\/instagram.com\/zedwapmusic","https:\/\/t.me\/zedwapmusic","https:\/\/www.tiktok.com\/@zedwap\/"]},"sourceOrganization":{"@id":"#Publisher"},"copyrightHolder":{"@id":"#Publisher"},"mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zedwap.co\/chile-one-tukalasekafye\/"},"author":{"@type":"Person","name":"Zedwap Media <i class=\"fi fi-sr-badge-check verified-badge\"><\/i>","url":"https:\/\/zedwap.co\/author\/zedwap-exclusive\/"},"image":{"@type":"ImageObject","url":"https:\/\/zedwap.co\/wp-content\/uploads\/2026\/08\/IMG-20260828-WA0000.jpg","width":1200,"height":1080}}</script>
+
+		<div id="share-buttons-bottom" class="share-buttons share-buttons-bottom">
+			<div class="share-links  share-centered icons-text">
+										<div class="share-title">
+							<span class="tie-icon-share" aria-hidden="true"></span>
+							<span> Share</span>
+						</div>
+						
+				<a href="https://www.facebook.com/sharer.php?u=https://zedwap.co/chile-one-tukalasekafye/" rel="external noopener nofollow" title="Facebook" target="_blank" class="facebook-share-btn  large-share-button" data-raw="https://www.facebook.com/sharer.php?u={post_link}">
+					<span class="share-btn-icon tie-icon-facebook"></span> <span class="social-text">Facebook</span>
+				</a>
+				<a href="https://x.com/intent/post?text=Chile%20One%20%E2%80%93%20Tukalasekafye&#038;url=https://zedwap.co/chile-one-tukalasekafye/" rel="external noopener nofollow" title="X" target="_blank" class="twitter-share-btn  large-share-button" data-raw="https://x.com/intent/post?text={post_title}&amp;url={post_link}">
+					<span class="share-btn-icon tie-icon-twitter"></span> <span class="social-text">X</span>
+				</a>
+				<a href="https://api.whatsapp.com/send?text=Chile%20One%20%E2%80%93%20Tukalasekafye%20https://zedwap.co/chile-one-tukalasekafye/" rel="external noopener nofollow" title="WhatsApp" target="_blank" class="whatsapp-share-btn  large-share-button" data-raw="https://api.whatsapp.com/send?text={post_title}%20{post_link}">
+					<span class="share-btn-icon tie-icon-whatsapp"></span> <span class="social-text">WhatsApp</span>
+				</a>
+				<a href="https://telegram.me/share/url?url=https://zedwap.co/chile-one-tukalasekafye/&text=Chile%20One%20%E2%80%93%20Tukalasekafye" rel="external noopener nofollow" title="Telegram" target="_blank" class="telegram-share-btn  large-share-button" data-raw="https://telegram.me/share/url?url={post_link}&text={post_title}">
+					<span class="share-btn-icon tie-icon-paper-plane"></span> <span class="social-text">Telegram</span>
+				</a>			</div><!-- .share-links /-->
+		</div><!-- .share-buttons /-->
+
+		
+	</article><!-- #the-post /-->
+
+	
+	<div class="post-components">
+
+		
+	
+
+				<div id="related-posts" class="container-wrapper">
+
+					<div class="mag-box-title the-global-title">
+						<h3>Related Songs</h3>
+					</div>
+
+					<div class="related-posts-list">
+
+					
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="Chile One Mr Zambia &#8211; Make Me Understand (Mukabene)" href="https://zedwap.co/download-mp3-chile-one-mr-zambia-make-me-understand-mukabene/" class="post-thumb"><img width="390" height="220" src="https://zedwap.co/wp-content/uploads/2022/11/Chile-One-Make-Me-Understand-Clean-Cover-390x220.jpeg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="Chile One Mr Zambia - Mukabene Mp3 Download" decoding="async" loading="lazy" /></a>
+								<h3 class="post-title"><a href="https://zedwap.co/download-mp3-chile-one-mr-zambia-make-me-understand-mukabene/">Chile One Mr Zambia &#8211; Make Me Understand (Mukabene)</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">October 31, 2026</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="Chile One &#8211; Fitule (Official Video)" href="https://zedwap.co/chile-one-fitule-official-video/" class="post-thumb"><img width="390" height="220" src="https://zedwap.co/wp-content/uploads/2025/09/maxresdefault-65-390x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="Chile One - Fitule (Official Video)" decoding="async" loading="lazy" srcset="https://zedwap.co/wp-content/uploads/2025/09/maxresdefault-65-390x220.jpg 390w, https://zedwap.co/wp-content/uploads/2025/09/maxresdefault-65-300x169.jpg 300w, https://zedwap.co/wp-content/uploads/2025/09/maxresdefault-65-1024x576.jpg 1024w, https://zedwap.co/wp-content/uploads/2025/09/maxresdefault-65-768x432.jpg 768w, https://zedwap.co/wp-content/uploads/2025/09/maxresdefault-65.jpg 1280w" sizes="auto, (max-width: 390px) 100vw, 390px" /></a>
+								<h3 class="post-title"><a href="https://zedwap.co/chile-one-fitule-official-video/">Chile One &#8211; Fitule (Official Video)</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">September 27, 2025</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="Macky 2 ft. Chile One Mr Zambia &#8211; Laka" href="https://zedwap.co/download-mp3-macky-2-ft-chile-one-mr-zambia-laka/" class="post-thumb"><img width="390" height="220" src="https://zedwap.co/wp-content/uploads/2023/08/Macky-2-ft.-Chile-One-Laka-390x220.jpeg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" loading="lazy" /></a>
+								<h3 class="post-title"><a href="https://zedwap.co/download-mp3-macky-2-ft-chile-one-mr-zambia-laka/">Macky 2 ft. Chile One Mr Zambia &#8211; Laka</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">October 31, 2026</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+							<div class="related-item tie-standard">
+
+								
+			<a aria-label="Chile One ft. Dizmo &#8211; Bakubala Mp3 Download" href="https://zedwap.co/chile-one-ft-dizmo-bakubala-mp3-download/" class="post-thumb"><img width="390" height="220" src="https://zedwap.co/wp-content/uploads/2023/12/Chile-One-Boy-From-Chililand-Album-390x220.jpeg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" loading="lazy" /></a>
+								<h3 class="post-title"><a href="https://zedwap.co/chile-one-ft-dizmo-bakubala-mp3-download/">Chile One ft. Dizmo &#8211; Bakubala Mp3 Download</a></h3>
+
+								<div class="post-meta clearfix"><span class="date meta-item tie-icon">October 31, 2026</span></div><!-- .post-meta -->							</div><!-- .related-item /-->
+
+						
+					</div><!-- .related-posts-list /-->
+				</div><!-- #related-posts /-->
+
+			    <div class="wpdiscuz_top_clearing"></div>
+    <div id='comments' class='comments-area'><div id='respond' style='width: 0;height: 0;clear: both;margin: 0;padding: 0;'></div><div id='wpd-post-rating' class='wpd-post-rating wpd-not-rated' data-post-id='127630' data-rate-editable='0'>
+            <div class='wpd-rating-wrap'>
+            <div class='wpd-rating-left'></div>
+            <div class='wpd-rating-data'>
+                <div class='wpd-rating-value'>
+                    <span class='wpdrv'>0</span>
+                    <span class='wpdrc'>0</span>
+                    <span class='wpdrt'>votes</span></div>
+                <div class='wpd-rating-title'>Article Rating</div>
+                <div class='wpd-rating-stars'><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg></div><div class='wpd-rate-starts'><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg><svg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 0h24v24H0z' fill='none'/><path class='wpd-star' d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/><path d='M0 0h24v24H0z' fill='none'/></svg></div></div>
+            <div class='wpd-rating-right'></div></div></div>    <div id="wpdcom" class="wpdiscuz_unauth wpd-default wpd-layout-1 wpd-comments-open">
+        <div id="add-comment-block" class="container-wrapper">            <div class="wc_social_plugin_wrapper">
+                            </div>
+            <div class="wpd-form-wrap">
+                <div class="wpd-form-head">
+                                            <div class="wpd-sbs-toggle">
+                            <i class="far fa-envelope"></i> <span
+                                class="wpd-sbs-title">Subscribe</span>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                                            <div class="wpd-auth">
+                                                <div class="wpd-login">
+                                                    </div>
+                    </div>
+                </div>
+                                                    <div class="wpdiscuz-subscribe-bar wpdiscuz-hidden">
+                                                    <form action="https://zedwap.co/wp-admin/admin-ajax.php?action=wpdAddSubscription"
+                                  method="post" id="wpdiscuz-subscribe-form">
+                                <div class="wpdiscuz-subscribe-form-intro">Notify of </div>
+                                <div class="wpdiscuz-subscribe-form-option"
+                                     style="width:40%;">
+                                    <select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+                                                                                    <option value="post">new follow-up comments</option>
+                                                                                                                                <option
+                                                value="all_comment" >new replies to my comments</option>
+                                                                                </select>
+                                </div>
+                                                                    <div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+                                        <input class="email" type="email" name="wpdiscuzSubscriptionEmail"
+                                               required="required" value=""
+                                               placeholder="Email"/>
+                                    </div>
+                                                                    <div class="wpdiscuz-subscribe-form-button">
+                                    <input id="wpdiscuz_subscription_button" class="wpd-prim-button wpd_not_clicked"
+                                           type="submit"
+                                           value="&rsaquo;"
+                                           name="wpdiscuz_subscription_button"/>
+                                </div>
+                                <input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="6528f6b02f" /><input type="hidden" name="_wp_http_referer" value="/chile-one-tukalasekafye/" />                            </form>
+                                                </div>
+                            <div
+            class="wpd-form wpd-form-wrapper wpd-main-form-wrapper" id='wpd-main-form-wrapper-0_0'>
+                                        <form  method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd_main_comm_form"                >
+                                        <div class="wpd-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap wpd-txt">
+                                                                                                        <div class="wpd-avatar">
+                                        <img alt='guest' src='https://secure.gravatar.com/avatar/2a8d6e0e0dde68d4fefd36d0d4253cd58731b64d9688bb1cfc6d17b3132cac70?s=56&#038;r=g' srcset='https://secure.gravatar.com/avatar/2a8d6e0e0dde68d4fefd36d0d4253cd58731b64d9688bb1cfc6d17b3132cac70?s=112&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' loading='lazy' decoding='async'/>                                    </div>
+                                                <div class="wpd-textarea-wrap">
+                <div id="wpd-editor-char-counter-0_0"
+                     class="wpd-editor-char-counter"></div>
+                <label style="display: none;" for="wc-textarea-0_0">Label</label>
+                <textarea
+                    id="wc-textarea-0_0"   placeholder="Join the discussion"
+                    aria-label="Join the discussion" name="wc_comment"
+                    class="wc_comment wpd-field"></textarea>
+            </div>
+            <div class="wpd-editor-buttons-right">
+                            </div>
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="wpd-form-foot" style='display:none;'>
+                        <div class="wpdiscuz-textarea-foot">
+                                                        <div class="wpdiscuz-button-actions"></div>
+                        </div>
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                            class="fas fa-user"></i>
+                    </div>
+                                    <input id="wc_name-0_0" value="" required='required' aria-required='true'                       class="wc_name wpd-field" type="text"
+                       name="wc_name"
+                       placeholder="Name*"
+                       maxlength="50" pattern='.{3,50}'                       title="">
+                <label for="wc_name-0_0"
+                       class="wpdlb">Name*</label>
+                            </div>
+                        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                            class="fas fa-at"></i>
+                    </div>
+                                    <input id="wc_email-0_0" value="" required='required' aria-required='true'                       class="wc_email wpd-field" type="email"
+                       name="wc_email"
+                       placeholder="Email*"/>
+                <label for="wc_email-0_0"
+                       class="wpdlb">Email*</label>
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-submit">
+                                                <label class="wpd_label"
+                           wpd-tooltip="Notify of new replies to this comment">
+                        <input id="wc_notification_new_comment-0_0"
+                               class="wc_notification_new_comment-0_0 wpd_label__checkbox"
+                               value="comment" type="checkbox"
+                               name="wpdiscuz_notification_type" />
+                        <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                    </label>
+                            <input id="wpd-field-submit-0_0"
+                   class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit"
+                   name="submit" value="Post Comment"
+                   aria-label="Post Comment"/>
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                                        <input type="hidden" class="wpdiscuz_unique_id" value="0_0"
+                           name="wpdiscuz_unique_id">
+                    <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a64e9d54b5" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="191"/><script type="text/rocketlazyloadscript">
+document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );
+</script>
+</p>                </form>
+                        </div>
+                <div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+                    <div
+            class="wpd-form wpd-form-wrapper wpd-secondary-form-wrapper" id='wpd-secondary-form-wrapper-wpdiscuzuniqueid' style='display: none;'>
+                            <div class="wpd-secondary-forms-social-content"></div>
+                <div class="clearfix"></div>
+                                        <form  method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd-secondary-form-wrapper"                >
+                                        <div class="wpd-field-comment">
+                        <div class="wpdiscuz-item wc-field-textarea">
+                            <div class="wpdiscuz-textarea-wrap wpd-txt">
+                                                                                                        <div class="wpd-avatar">
+                                        <img alt='guest' src='https://secure.gravatar.com/avatar/26e629196f2d7abe8618df6fa07c94ee270b99bb51cec11b4ba5db5d1909d59d?s=56&#038;r=g' srcset='https://secure.gravatar.com/avatar/26e629196f2d7abe8618df6fa07c94ee270b99bb51cec11b4ba5db5d1909d59d?s=112&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' loading='lazy' decoding='async'/>                                    </div>
+                                                <div class="wpd-textarea-wrap">
+                <div id="wpd-editor-char-counter-wpdiscuzuniqueid"
+                     class="wpd-editor-char-counter"></div>
+                <label style="display: none;" for="wc-textarea-wpdiscuzuniqueid">Label</label>
+                <textarea
+                    id="wc-textarea-wpdiscuzuniqueid"   placeholder="Join the discussion"
+                    aria-label="Join the discussion" name="wc_comment"
+                    class="wc_comment wpd-field"></textarea>
+            </div>
+            <div class="wpd-editor-buttons-right">
+                            </div>
+                                        </div>
+                        </div>
+                    </div>
+                    <div class="wpd-form-foot" style='display:none;'>
+                        <div class="wpdiscuz-textarea-foot">
+                                                        <div class="wpdiscuz-button-actions"></div>
+                        </div>
+                                <div class="wpd-form-row">
+                    <div class="wpd-form-col-left">
+                        <div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                            class="fas fa-user"></i>
+                    </div>
+                                    <input id="wc_name-wpdiscuzuniqueid" value="" required='required' aria-required='true'                       class="wc_name wpd-field" type="text"
+                       name="wc_name"
+                       placeholder="Name*"
+                       maxlength="50" pattern='.{3,50}'                       title="">
+                <label for="wc_name-wpdiscuzuniqueid"
+                       class="wpdlb">Name*</label>
+                            </div>
+                        <div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+                                    <div class="wpd-field-icon"><i
+                            class="fas fa-at"></i>
+                    </div>
+                                    <input id="wc_email-wpdiscuzuniqueid" value="" required='required' aria-required='true'                       class="wc_email wpd-field" type="email"
+                       name="wc_email"
+                       placeholder="Email*"/>
+                <label for="wc_email-wpdiscuzuniqueid"
+                       class="wpdlb">Email*</label>
+                            </div>
+                    </div>
+                <div class="wpd-form-col-right">
+                    <div class="wc-field-submit">
+                                                <label class="wpd_label"
+                           wpd-tooltip="Notify of new replies to this comment">
+                        <input id="wc_notification_new_comment-wpdiscuzuniqueid"
+                               class="wc_notification_new_comment-wpdiscuzuniqueid wpd_label__checkbox"
+                               value="comment" type="checkbox"
+                               name="wpdiscuz_notification_type" />
+                        <span class="wpd_label__text">
+                                <span class="wpd_label__check">
+                                    <i class="fas fa-bell wpdicon wpdicon-on"></i>
+                                    <i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+                                </span>
+                            </span>
+                    </label>
+                            <input id="wpd-field-submit-wpdiscuzuniqueid"
+                   class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit"
+                   name="submit" value="Post Comment"
+                   aria-label="Post Comment"/>
+        </div>
+                </div>
+                    <div class="clearfix"></div>
+        </div>
+                            </div>
+                                        <input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid"
+                           name="wpdiscuz_unique_id">
+                    <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="a64e9d54b5" /></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_2" name="ak_js" value="143"/><script type="text/rocketlazyloadscript">
+document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTime() );
+</script>
+</p>                </form>
+                        </div>
+                </div>
+                    </div>
+            </div><!-- #add-comment-block /-->            <div id="wpd-threads" class="wpd-thread-wrapper">
+                <div class="wpd-thread-head">
+                    <div class="wpd-thread-info "
+                         data-comments-count="1">
+                        <span class='wpdtc' title='1'>1</span> Comment                    </div>
+                                        <div class="wpd-space"></div>
+                    <div class="wpd-thread-filter">
+                                                    <div class="wpd-filter wpdf-reacted wpd_not_clicked " data-filter-type="most_reacted"
+                                 wpd-tooltip="Most reacted comment">
+                                <i class="fas fa-bolt"></i></div>
+                                                        <div class="wpd-filter wpdf-hottest wpd_not_clicked " data-filter-type="hottest_thread"
+                                 wpd-tooltip="Hottest comment thread">
+                                <i class="fas fa-fire"></i></div>
+                                                        <div class="wpd-filter wpdf-sorting ">
+                                                                        <span class="wpdiscuz-sort-button wpdiscuz-date-sort-asc wpdiscuz-sort-button-active"
+                                              data-sorting="oldest">Oldest</span>
+                                                                        <i class="fas fa-sort-down"></i>
+                                <div class="wpdiscuz-sort-buttons">
+                                                                            <span class="wpdiscuz-sort-button wpdiscuz-date-sort-desc"
+                                              data-sorting="newest">Newest</span>
+                                                                                <span class="wpdiscuz-sort-button wpdiscuz-vote-sort-up"
+                                              data-sorting="by_vote">Most Voted</span>
+                                                                        </div>
+                            </div>
+                                                </div>
+                    <div class="wpd-filter-container wpdiscuz-hidden"></div>
+                </div>
+                                <div class="wpd-thread-list">
+                                        <div class="wpdiscuz-comment-pagination" style='display:none;'>
+                                                    <div class="wpd-load-more-submit-wrap">
+                                <button name="submit" data-lastparentid="0"
+                                        class="wpd-load-more-submit wpd-loaded wpd-prim-button">
+                                    Load More Comments                                </button>
+                            </div>
+                            <span id="wpdiscuzHasMoreComments" data-is_show_load_more="0"></span>
+                                                </div>
+                </div>
+            </div>
+                </div>
+        </div>
+    <div id="wpdiscuz-loading-bar"
+         class="wpdiscuz-loading-bar-unauth"></div>
+    <div id="wpdiscuz-comment-message"
+         class="wpdiscuz-comment-message-unauth"></div>
+    
+	</div><!-- .post-components /-->
+
+	
+</div><!-- .main-content -->
+
+
+	<aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky" aria-label="Primary Sidebar">
+		<div class="theiaStickySidebar">
+			<div id="posts-list-widget-29" class="container-wrapper widget posts-list"><div class="widget-title the-global-title has-block-head-4"><div class="the-subtitle">🔥FOR YOU<span class="widget-title-icon tie-icon"></span></div></div><div class="widget-posts-list-wrapper"><div class="widget-posts-list-container posts-list-big-first has-first-big-post"  data-current="1" data-query="{'number':'5','id':['7914','7915'],'tags':'','offset':'','order':'latest','current_post':127630,'asc_or_desc':'','trending_posts':false,'limit_published_days':''}" data-style="{'thumbnail_first':'jannah-image-large','review_first':'large'}"><ul class="posts-list-items widget-posts-wrapper">
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="Milito Yeyeye ft. Lil Billion &#8211; Uli Wakwi" href="https://zedwap.co/milito-yeyeye-ft-lil-billion-uli-wakwi/" class="post-thumb"><span class="post-cat-wrap"><span class="post-cat tie-cat-5">Music</span></span><img width="390" height="220" src="https://zedwap.co/wp-content/uploads/2026/09/IMG-20260912-WA0004-390x220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="Milito Yeyeye ft. Lil Billion - Uli Wakwi?" decoding="async" loading="lazy" /></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://zedwap.co/milito-yeyeye-ft-lil-billion-uli-wakwi/">Milito Yeyeye ft. Lil Billion &#8211; Uli Wakwi</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">October 31, 2026</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="T-Sean ft. Chile One MrZambia – Doing Fine" href="https://zedwap.co/t-sean-ft-chile-one-mr-zambia-doing-fine/" class="post-thumb"><img width="220" height="150" src="https://zedwap.co/wp-content/uploads/2026/06/IMG-20260619-WA0008-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="T-Sean ft. Chile One MrZambia – Doing Fine" decoding="async" loading="lazy" /></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://zedwap.co/t-sean-ft-chile-one-mr-zambia-doing-fine/">T-Sean ft. Chile One MrZambia – Doing Fine</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">October 31, 2026</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="Muzo Aka Alphonso ft. S Roxxy – Somebody" href="https://zedwap.co/muzo-aka-alphonso-ft-s-roxxy-somebody/" class="post-thumb"><img width="220" height="150" src="https://zedwap.co/wp-content/uploads/2026/06/IMG-20260619-WA0005-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="" decoding="async" loading="lazy" /></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://zedwap.co/muzo-aka-alphonso-ft-s-roxxy-somebody/">Muzo Aka Alphonso ft. S Roxxy – Somebody</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">October 31, 2026</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="Chef 187 &#8211; Shadow Boxing" href="https://zedwap.co/chef-187-shadow-boxing/" class="post-thumb"><img width="220" height="150" src="https://zedwap.co/wp-content/uploads/2026/06/721189418_1573257250835981_5565484217770002325_n-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="Chef 187 - Shadow Boxing" decoding="async" loading="lazy" /></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://zedwap.co/chef-187-shadow-boxing/">Chef 187 &#8211; Shadow Boxing</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">October 31, 2026</span>		</div>
+	</div>
+</li>
+
+<li class="widget-single-post-item widget-post-list tie-standard">
+
+			<div class="post-widget-thumbnail">
+
+			
+			<a aria-label="T Sean ft. Xaven &#8211; Stay" href="https://zedwap.co/t-sean-ft-xaven-stay/" class="post-thumb"><img width="220" height="150" src="https://zedwap.co/wp-content/uploads/2026/04/670265789_939937795489536_2099916994539305188_n-220x150.jpg" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image" alt="T Sean ft. Xaven - Stay" decoding="async" loading="lazy" /></a>		</div><!-- post-alignleft /-->
+	
+	<div class="post-widget-body ">
+		<a class="post-title the-subtitle" href="https://zedwap.co/t-sean-ft-xaven-stay/">T Sean ft. Xaven &#8211; Stay</a>
+
+		<div class="post-meta">
+			<span class="date meta-item tie-icon">October 31, 2026</span>		</div>
+	</div>
+</li>
+</ul></div><div class="widget-pagination-wrapper">
+							<ul class="slider-arrow-nav">
+								<li>
+									<a class="widget-pagination prev-posts pagination-disabled" href="#">
+										<span class="tie-icon-angle-left" aria-hidden="true"></span>
+										<span class="screen-reader-text">Previous page</span>
+									</a>
+								</li>
+								<li>
+									<a class="widget-pagination next-posts" href="#">
+										<span class="tie-icon-angle-right" aria-hidden="true"></span>
+										<span class="screen-reader-text">Next page</span>
+									</a>
+								</li>
+							</ul>
+						</div></div><div class="clearfix"></div></div><!-- .widget /-->		</div><!-- .theiaStickySidebar /-->
+	</aside><!-- .sidebar /-->
+	
+
+
+
+
+<style> 
+1.zedwap-footer-app1 {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff; 
+  margin-top: 40px;
+}
+
+.zedwap-footer-app1 h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.zedwap-footer-app1 p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.store-btn img {
+  height: 55px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-btn img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Mobile optimization */
+@media (max-width: 600px) {
+  .zedwap-footer-app1 h2 {
+    font-size: 22px;
+  }
+
+  .store-btn img {
+    height: 48px;
+  }
+}
+</style>
+
+
+<div class="zedwap-footer-app1">
+  <div class="app-container">
+    <div class="app-buttons">
+      <a href="https://play.google.com/store/apps/details?id=com.zedwap.music" target="_blank" class="store-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+      </a>
+
+      <a href="https://play.google.com/store/apps/details?id=com.zedwap.music" target="_blank" class="store-btn">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+</div><!-- .main-content-row /--></div><!-- #content /-->
+<footer id="footer" class="site-footer dark-skin dark-widgetized-area">
+
+	
+			<div id="footer-widgets-container">
+				<div class="container">
+									</div><!-- .container /-->
+			</div><!-- #Footer-widgets-container /-->
+			
+			<div id="site-info" class="site-info">
+				<div class="container">
+					<div class="tie-row">
+						<div class="tie-col-md-12">
+
+							<div class="copyright-text copyright-text-first"><a href="//www.dmca.com/Protection/Status.aspx?ID=d4a57610-b30c-4c80-9185-e9278e57e749" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=d4a57610-b30c-4c80-9185-e9278e57e749"  alt="DMCA.com Protection Status" /></a>  <script type="text/rocketlazyloadscript" data-rocket-src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+
+Copyright &copy 2017 - 2026 Zedwap Music LLC. All Rights Reserved. Zedwap® is a registered trademark.</div><div class="footer-menu"><ul id="menu-footer-menu" class="menu"><li id="menu-item-33100" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-33100"><a href="https://zedwap.co/">Home</a></li>
+<li id="menu-item-52651" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52651"><a href="https://zedwap.co/advertise/">Advertise</a></li>
+<li id="menu-item-1822" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1822"><a href="https://zedwap.co/about-us/">About Us</a></li>
+<li id="menu-item-13812" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13812"><a href="https://zedwap.co/terms-of-use/">Terms and Conditions</a></li>
+<li id="menu-item-41600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41600"><a href="https://zedwap.co/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-40597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40597"><a href="https://zedwap.co/contact-us/">Contact Us</a></li>
+<li id="menu-item-68033" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-68033"><a href="https://zedwap.co/submit-music/">Submit Your Music</a></li>
+<li id="menu-item-78532" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-78532"><a href="https://zedwap.co/guest-posting/">Guest Posting</a></li>
+<li id="menu-item-88028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88028"><a href="https://zedwap.co/request-songs/">Request Songs</a></li>
+<li id="menu-item-88139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88139"><a href="https://zedwap.co/top-songs-week/">Top Songs Week</a></li>
+<li id="menu-item-88140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88140"><a href="https://zedwap.co/top-songs-today/">Top Songs Today</a></li>
+<li id="menu-item-88141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88141"><a href="https://zedwap.co/top-songs-month/">Top Songs Month</a></li>
+<li id="menu-item-88146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88146"><a href="https://zedwap.co/top-songs-year/">Top Songs Year</a></li>
+<li id="menu-item-93517" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93517"><a href="https://zedwap.co/cookie-policy/">Cookie Policy</a></li>
+<li id="menu-item-96990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96990"><a href="https://zedwap.co/dmca/">DMCA</a></li>
+<li id="menu-item-127122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-127122"><a href="https://zedwap.co/delete-account/">Delete Account</a></li>
+</ul></div><ul class="social-icons"><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="http://facebook.com/zedwapmusic"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">Facebook</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="http://twitter.com/zedwapmusic"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">X</span></a></li><li class="social-icons-item"><a class="social-link youtube-social-icon" rel="external noopener nofollow" target="_blank" href="https://youtube.com/@zedwapchannel"><span class="tie-social-icon tie-icon-youtube"></span><span class="screen-reader-text">YouTube</span></a></li><li class="social-icons-item"><a class="social-link instagram-social-icon" rel="external noopener nofollow" target="_blank" href="https://instagram.com/zedwapmusic"><span class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">Instagram</span></a></li><li class="social-icons-item"><a class="social-link telegram-social-icon" rel="external noopener nofollow" target="_blank" href="https://t.me/zedwapmusic"><span class="tie-social-icon tie-icon-paper-plane"></span><span class="screen-reader-text">Telegram</span></a></li><li class="social-icons-item"><a class="social-link tiktok-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.tiktok.com/@zedwap/"><span class="tie-social-icon tie-icon-tiktok"></span><span class="screen-reader-text">TikTok</span></a></li></ul> 
+
+						</div><!-- .tie-col /-->
+					</div><!-- .tie-row /-->
+				</div><!-- .container /-->
+			</div><!-- #site-info /-->
+			
+</footer><!-- #footer /-->
+
+
+
+
+
+		</div><!-- #tie-wrapper /-->
+
+		
+	<aside class=" side-aside normal-side dark-skin dark-widgetized-area appear-from-left" aria-label="Secondary Sidebar" style="visibility: hidden;">
+		<div data-height="100%" class="side-aside-wrapper has-custom-scroll">
+
+			<a href="#" class="close-side-aside remove big-btn">
+				<span class="screen-reader-text">Close</span>
+			</a><!-- .close-side-aside /-->
+
+
+			
+				<div id="mobile-container">
+
+					
+					<div id="mobile-menu" class="">
+											</div><!-- #mobile-menu /-->
+
+											<div id="mobile-social-icons" class="social-icons-widget solid-social-icons">
+							<ul><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="http://facebook.com/zedwapmusic"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">Facebook</span></a></li><li class="social-icons-item"><a class="social-link twitter-social-icon" rel="external noopener nofollow" target="_blank" href="http://twitter.com/zedwapmusic"><span class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">X</span></a></li><li class="social-icons-item"><a class="social-link youtube-social-icon" rel="external noopener nofollow" target="_blank" href="https://youtube.com/@zedwapchannel"><span class="tie-social-icon tie-icon-youtube"></span><span class="screen-reader-text">YouTube</span></a></li><li class="social-icons-item"><a class="social-link instagram-social-icon" rel="external noopener nofollow" target="_blank" href="https://instagram.com/zedwapmusic"><span class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">Instagram</span></a></li><li class="social-icons-item"><a class="social-link telegram-social-icon" rel="external noopener nofollow" target="_blank" href="https://t.me/zedwapmusic"><span class="tie-social-icon tie-icon-paper-plane"></span><span class="screen-reader-text">Telegram</span></a></li><li class="social-icons-item"><a class="social-link tiktok-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.tiktok.com/@zedwap/"><span class="tie-social-icon tie-icon-tiktok"></span><span class="screen-reader-text">TikTok</span></a></li></ul> 
+						</div><!-- #mobile-social-icons /-->
+												<div id="mobile-search">
+							<form role="search" method="get" class="search-form" action="https://zedwap.co/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>						</div><!-- #mobile-search /-->
+						
+				</div><!-- #mobile-container /-->
+			
+
+			
+		</div><!-- .side-aside-wrapper /-->
+	</aside><!-- .side-aside /-->
+
+	
+	</div><!-- #tie-container /-->
+</div><!-- .background-overlay /-->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/jannah-child/*","/wp-content/themes/jannah/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+    <script type="text/rocketlazyloadscript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find all anchor tags with href ending in .mp3
+        var mp3Links = document.querySelectorAll('a[href$=".mp3"]');
+        
+        // Loop through each .mp3 link and add download attribute if not already present
+        mp3Links.forEach(function(link) {
+            if (!link.hasAttribute('download')) {
+                link.setAttribute('download', '');
+            }
+        });
+    });
+    </script>
+        <script type="text/rocketlazyloadscript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all anchor tags with .mp3 links on your subdomain
+        const links = document.querySelectorAll('a[href^="https://cdn.zedwap.co/wp-content/music/"][href$=".mp3"]');
+
+        links.forEach(link => {
+            const originalUrl = link.href;
+            // Modify the href to use the download.php script
+            link.href = 'https://zedwap.co/download.php?url=' + encodeURIComponent(originalUrl);
+        });
+    });
+    </script>
+    <!--googleoff: all--><div id="cookie-law-info-bar" data-nosnippet="true"><span><div class="cli-bar-container cli-style-v2"><div class="cli-bar-message">We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept”, you consent to the use of ALL the cookies.</br><div class="wt-cli-ccpa-element"> <a style="color:#333333" class="wt-cli-ccpa-opt-out">Do not sell my personal information</a>.</div></div><div class="cli-bar-btn_container"><a role="button" tabindex="0" class="cli_settings_button" style="margin:0px 10px 0px 5px">Settings</a><a role="button" tabindex="0" data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn" style="display:inline-block">Accept</a></div></div></span></div><div id="cookie-law-info-again" style="display:none" data-nosnippet="true"><span id="cookie_hdr_showagain">Privacy &amp; Cookies Policy</span></div><div class="cli-modal" data-nosnippet="true" id="cliSettingsPopup" tabindex="-1" role="dialog" aria-labelledby="cliSettingsPopup" aria-hidden="true">
+  <div class="cli-modal-dialog" role="document">
+	<div class="cli-modal-content cli-bar-popup">
+		  <button type="button" class="cli-modal-close" id="cliModalClose">
+			<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+			<span class="wt-cli-sr-only">Close</span>
+		  </button>
+		  <div class="cli-modal-body">
+			<div class="cli-container-fluid cli-tab-container">
+	<div class="cli-row">
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+			<div class="cli-privacy-overview">
+				<h4>Privacy Overview</h4>				<div class="cli-privacy-content">
+					<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these cookies, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may have an effect on your browsing experience.</div>
+				</div>
+				<a class="cli-privacy-readmore" aria-label="Show more" tabindex="0" role="button" data-readmore-text="Show more" data-readless-text="Show less"></a>			</div>
+		</div>
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
+												<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="necessary" data-toggle="cli-toggle-tab">
+								Necessary							</a>
+																						<div class="wt-cli-necessary-checkbox">
+									<input type="checkbox" class="cli-user-preference-checkbox" id="wt-cli-checkbox-necessary" data-id="checkbox-necessary" checked="checked" />
+									<label class="form-check-label" for="wt-cli-checkbox-necessary">Necessary</label>
+								</div>
+								<span class="cli-necessary-caption">Always Enabled</span>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="necessary">
+								<div class="wt-cli-cookie-description">
+									Necessary cookies are absolutely essential for the website to function properly. This category only includes cookies that ensures basic functionalities and security features of the website. These cookies do not store any personal information.								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="non-necessary" data-toggle="cli-toggle-tab">
+								Non-necessary							</a>
+																						<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-non-necessary" class="cli-user-preference-checkbox" data-id="checkbox-non-necessary" checked='checked' />
+									<label for="wt-cli-checkbox-non-necessary" class="cli-slider" data-cli-enable="Enabled" data-cli-disable="Disabled"><span class="wt-cli-sr-only">Non-necessary</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="non-necessary">
+								<div class="wt-cli-cookie-description">
+									Any cookies that may not be particularly necessary for the website to function and is used specifically to collect user personal data via analytics, ads, other embedded contents are termed as non-necessary cookies. It is mandatory to procure user consent prior to running these cookies on your website.								</div>
+							</div>
+						</div>
+					</div>
+										</div>
+	</div>
+</div>
+		  </div>
+		  <div class="cli-modal-footer">
+			<div class="wt-cli-element cli-container-fluid cli-tab-container">
+				<div class="cli-row">
+					<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+						<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+						
+															<a id="wt-cli-privacy-save-btn" role="button" tabindex="0" data-cli-action="accept" class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn">SAVE &amp; ACCEPT</a>
+													</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<div data-rocket-location-hash="2917febf24991102098feabfd328df5b" class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div data-rocket-location-hash="76a4edd86be23ce43a9351f5b38190a1" class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<!--googleon: all--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/v4-shims.css"><div data-rocket-location-hash="d08bff8f1110355ebdace90188ed9d65" id="reading-position-indicator"></div><div data-rocket-location-hash="c9e53844fbfe6a23604d061f60c1b650" id="is-scroller-outer"><div data-rocket-location-hash="4235d811d808b8426e70537f6ba22943" id="is-scroller"></div></div><div data-rocket-location-hash="e2acc92c4a66965e9a72caecdd95da86" id="fb-root"></div>		<div data-rocket-location-hash="e1f00560d9e38793f41652ef43bf2663" id="tie-popup-search-desktop" class="tie-popup tie-popup-search-wrap" style="display: none;">
+			<a href="#" class="tie-btn-close remove big-btn light-btn">
+				<span class="screen-reader-text">Close</span>
+			</a>
+			<div data-rocket-location-hash="10c5b06b29a7a0c5dff8d534d52684fd" class="popup-search-wrap-inner">
+
+				<div data-rocket-location-hash="2d4ae8f49a5e2df4df022f3ac4175353" class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="Search">
+
+										<form method="get" class="tie-popup-search-form" action="https://zedwap.co/">
+							<input class="tie-popup-search-input " inputmode="search" type="text" name="s" title="Search for" autocomplete="off" placeholder="Type and hit Enter" />
+							<button class="tie-popup-search-submit" type="submit">
+								<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+								<span class="screen-reader-text">Search for</span>
+							</button>
+						</form>
+						
+				</div><!-- .pop-up-live-search /-->
+
+			</div><!-- .popup-search-wrap-inner /-->
+		</div><!-- .tie-popup-search-wrap /-->
+				<div data-rocket-location-hash="3a3a0fda53a982392934ae1477b0b051" id="tie-popup-search-mobile" class="tie-popup tie-popup-search-wrap" style="display: none;">
+			<a href="#" class="tie-btn-close remove big-btn light-btn">
+				<span class="screen-reader-text">Close</span>
+			</a>
+			<div data-rocket-location-hash="42ec104b57c46db7080de2791af6be51" class="popup-search-wrap-inner">
+
+				<div data-rocket-location-hash="ac1a279350aa1f4df3df74628d1921f4" class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="Search">
+
+										<form method="get" class="tie-popup-search-form" action="https://zedwap.co/">
+							<input class="tie-popup-search-input " inputmode="search" type="text" name="s" title="Search for" autocomplete="off" placeholder="Search for" />
+							<button class="tie-popup-search-submit" type="submit">
+								<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+								<span class="screen-reader-text">Search for</span>
+							</button>
+						</form>
+						
+				</div><!-- .pop-up-live-search /-->
+
+			</div><!-- .popup-search-wrap-inner /-->
+		</div><!-- .tie-popup-search-wrap /-->
+		<span id='wpdUserContentInfoAnchor' style='display:none;' rel='#wpdUserContentInfo' data-wpd-lity>wpDiscuz</span><div id='wpdUserContentInfo' style='overflow:auto;background:#FDFDF6;padding:20px;width:760px;max-width:100%;border-radius:6px;' class='lity-hide'></div><div id='wpd-editor-source-code-wrapper-bg'></div><div id='wpd-editor-source-code-wrapper'><textarea id='wpd-editor-source-code'></textarea><button id='wpd-insert-source-code'>Insert</button><input type='hidden' id='wpd-editor-uid' /></div><script type="text/rocketlazyloadscript" id="jannah-qa-frontend-js-after">
+document.addEventListener('click', function(e){
+    var btn = e.target.closest('.jqap-qa-trigger');
+    if(!btn) return;
+
+    var item = btn.closest('.jqap-qa-item');
+    if(!item) return;
+
+    var content = item.querySelector('.jqap-qa-content');
+    var isOpen = item.classList.contains('is-open');
+
+    var parent = item.closest('.jqap-qa-wrap');
+    if(parent){
+        parent.querySelectorAll('.jqap-qa-item.is-open').forEach(function(openItem){
+            if(openItem !== item){
+                openItem.classList.remove('is-open');
+                var openBtn = openItem.querySelector('.jqap-qa-trigger');
+                var openContent = openItem.querySelector('.jqap-qa-content');
+                if(openBtn) openBtn.setAttribute('aria-expanded', 'false');
+                if(openContent) openContent.style.maxHeight = null;
+            }
+        });
+    }
+
+    if(isOpen){
+        item.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        if(content) content.style.maxHeight = null;
+    } else {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        if(content) content.style.maxHeight = content.scrollHeight + 'px';
+    }
+});
+//# sourceURL=jannah-qa-frontend-js-after
+</script>
+<script id="pedro-sfa-js-extra">
+var PedroFooterAds = {"ads":[{"id":"48bc4968-606d-4143-b388-f894fab61ba6","image":"https://zedwap.co/zedwap-app-ad.png","proxy":"","url":"https://play.google.com/store/apps/details?id=com.zedwap.music","alt":"Zedwap Music App","weight":1},{"id":"2197d4c0-2ffc-4110-a814-4cb24182424f","image":"https://zedwap.co/wp-content/uploads/2026/10/JobLink-Zambia-Banner.jpg","proxy":"","url":"https://play.google.com/store/apps/details?id=com.joblinkzambia","alt":"Job Link Zambia Banner","weight":1}],"settings":{"rotation":10,"dismiss":0,"autoload":1},"endpoint":"https://zedwap.co/wp-json/pedro-sfa/v1/event"};
+//# sourceURL=pedro-sfa-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="pedro-sfa-js" data-rocket-src="https://zedwap.co/wp-content/plugins/pedro-smart-footer-ads/assets/footer-ads.js?ver=1.9.2"></script>
+<script id="wpdiscuz-combo-js-js-extra">
+var wpdiscuzAjaxObj = {"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Please fill out required fields","wc_msg_comment_is_trash":"Your comment was not published.","wc_msg_comment_is_spam":"Your comment was not published.","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_banned_user":"You are banned","wc_rate_limit_exceeded":"Too many requests. Please slow down.","wc_comment_edit_not_possible":"Sorry, this comment is no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_spoiler_title":"Spoiler Title","wc_cannot_rate_again":"You cannot rate again","wc_not_allowed_to_rate":"You're not allowed to rate here","wc_confirm_rate_edit":"Are you sure you want to edit your rate?","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","wc_inline_feedbacks":"Inline Feedbacks","wc_inline_comments_view_all":"View all comments","is_user_logged_in":"","commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"30","liveUpdateGuests":"0","wordpressThreadCommentsDepth":"5","wordpressIsPaginate":"","commentTextMaxLength":"0","replyTextMaxLength":"0","commentTextMinLength":"1","replyTextMinLength":"1","storeCommenterData":"100000","socialLoginAgreementCheckbox":"1","enableFbLogin":"0","enableFbShare":"0","facebookAppID":"","enableGoogleLogin":"0","cookiehash":"ec33d48efe66317732686af89e6ebb9a","isLoadOnlyParentComments":"1","scrollToComment":"1","commentFormView":"collapsed","enableDropAnimation":"1","isNativeAjaxEnabled":"1","userInteractionCheck":"1","enableBubble":"0","bubbleLiveUpdate":"0","bubbleHintTimeout":"45","bubbleHintHideTimeout":"10","cookieHideBubbleHint":"wpdiscuz_hide_bubble_hint","bubbleHintShowOnce":"1","bubbleHintCookieExpires":"7","bubbleShowNewCommentMessage":"1","bubbleLocation":"content_left","firstLoadWithAjax":"1","wc_copied_to_clipboard":"Copied to clipboard!","inlineFeedbackAttractionType":"blink","antispamFieldPrefixes":["ak_","akismet_comment_nonce","la_sentinelle_"],"loadRichEditor":"0","wpDiscuzReCaptchaSK":"","wpDiscuzReCaptchaTheme":"light","wpDiscuzReCaptchaVersion":"2.0","wc_captcha_show_for_guest":"0","wc_captcha_show_for_members":"0","wpDiscuzIsShowOnSubscribeForm":"0","wmuEnabled":"0","wmuInput":"wmu_files","wmuMaxFileCount":"1","wmuMaxFileSize":"2097152","wmuPostMaxSize":"67108864","wmuIsLightbox":"0","wmuMimeTypes":{"jpg":"image/jpeg","jpeg":"image/jpeg","jpe":"image/jpeg","gif":"image/gif","png":"image/png","bmp":"image/bmp","tiff":"image/tiff","tif":"image/tiff","ico":"image/x-icon"},"wmuPhraseConfirmDelete":"Are you sure you want to delete this attachment?","wmuPhraseNotAllowedFile":"Not allowed file type","wmuPhraseMaxFileCount":"Maximum number of uploaded files is 1","wmuPhraseMaxFileSize":"Maximum upload file size is 2MB","wmuPhrasePostMaxSize":"Maximum post size is 64MB","wmuPhraseDoingUpload":"Uploading in progress! Please wait.","msgEmptyFile":"File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.","msgPostIdNotExists":"Post ID not exists","msgUploadingNotAllowed":"Sorry, uploading not allowed for this post","msgPermissionDenied":"You do not have sufficient permissions to perform this action","wmuKeyImages":"images","wmuSingleImageWidth":"auto","wmuSingleImageHeight":"200","wmuIconVideo":"https://zedwap.co/wp-content/plugins/wpdiscuz/assets/img/file-icons/video-audio-type.png","wmuIconFile":"https://zedwap.co/wp-content/plugins/wpdiscuz/assets/img/file-icons/file-type.png","previewTemplate":"\u003Cdiv class=\"wmu-preview [PREVIEW_TYPE_CLASS]\" title=\"[PREVIEW_TITLE]\" data-wmu-type=\"[PREVIEW_TYPE]\" data-wmu-attachment=\"[PREVIEW_ID]\" data-wmu-index=\"[PREVIEW_INDEX]\"\u003E\r\n    \u003Cdiv class=\"wmu-preview-remove\"\u003E\r\n        \u003Cimg class=\"wmu-preview-img\" src=\"[PREVIEW_ICON]\"\u003E\r\n        \u003Cdiv class=\"wmu-file-name\"\u003E[PREVIEW_FILENAME]\u003C/div\u003E\r\n        \u003Cdiv class=\"wmu-preview-delete\" title=\"Delete\"\u003E\u2715\u003C/div\u003E\r\n        \u003Clabel class=\"wmu-preview-replace\" title=\"Replace\"\u003E\u21bb\u003Cinput type=\"file\" style=\"display:none\" class=\"wmu-replace-input\"\u003E\u003C/label\u003E\r\n    \u003C/div\u003E\r\n\u003C/div\u003E\r\n","isUserRated":"0","version":"7.6.74","wc_post_id":"127630","wc_blog_id":"1","isCookiesEnabled":"1","loadLastCommentId":"0","dataFilterCallbacks":[],"phraseFilters":[],"scrollSize":"32","url":"https://zedwap.co/wp-admin/admin-ajax.php","customAjaxUrl":"https://zedwap.co/wp-content/plugins/wpdiscuz/utils/ajax/wpdiscuz-ajax.php","bubbleUpdateUrl":"https://zedwap.co/wp-json/wpdiscuz/v1/update","restNonce":"2d2d5f957f","is_rate_editable":"0","menu_icon":"https://zedwap.co/wp-content/plugins/wpdiscuz/assets/img/plugin-icon/wpdiscuz-svg.svg","menu_icon_hover":"https://zedwap.co/wp-content/plugins/wpdiscuz/assets/img/plugin-icon/wpdiscuz-svg_hover.svg","nonceName":"wpdiscuz_nonce","postAttachmentsAsGallery":"","wmuPhraseNotAllowedFileType":"File type is not allowed","is_email_field_required":"1"};
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?","additionalTab":"0"};
+//# sourceURL=wpdiscuz-combo-js-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="wpdiscuz-combo-js-js" data-rocket-src="https://zedwap.co/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-combo-no_quill.min.js?ver=7.6.74"></script>
+<script id="tie-scripts-js-extra">
+var tie = {"is_rtl":"","ajaxurl":"https://zedwap.co/wp-admin/admin-ajax.php","is_side_aside_light":"","is_taqyeem_active":"","is_sticky_video":"","mobile_menu_top":"","mobile_menu_active":"area_1","mobile_menu_parent":"true","lightbox_all":"true","lightbox_gallery":"true","lightbox_skin":"dark","lightbox_thumb":"horizontal","lightbox_arrows":"true","is_singular":"1","autoload_posts":"","reading_indicator":"true","lazyload":"","select_share":"true","select_share_twitter":"","select_share_facebook":"","select_share_linkedin":"","select_share_email":"","facebook_app_id":"5303202981","twitter_username":"","responsive_tables":"true","ad_blocker_detector":"","sticky_behavior":"default","sticky_desktop":"","sticky_mobile":"","sticky_mobile_behavior":"default","ajax_loader":"\u003Cdiv class=\"loader-overlay\"\u003E\u003Cdiv class=\"spinner-circle\"\u003E\u003C/div\u003E\u003C/div\u003E","type_to_search":"1","lang_no_results":"Nothing Found","sticky_share_mobile":"","sticky_share_post":"","sticky_share_post_menu":""};
+//# sourceURL=tie-scripts-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="tie-scripts-js" data-rocket-src="https://zedwap.co/wp-content/themes/jannah/assets/js/scripts.min.js?ver=7.6.8"></script>
+<script type="text/rocketlazyloadscript" id="tie-js-ilightbox-js" data-rocket-src="https://zedwap.co/wp-content/themes/jannah/assets/ilightbox/lightbox.js?ver=7.6.8"></script>
+<script type="text/rocketlazyloadscript" id="tie-js-desktop-js" data-rocket-src="https://zedwap.co/wp-content/themes/jannah/assets/js/desktop.min.js?ver=7.6.8"></script>
+<script type="text/rocketlazyloadscript" id="tie-js-single-js" data-rocket-src="https://zedwap.co/wp-content/themes/jannah/assets/js/single.min.js?ver=7.6.8"></script>
+<script type="text/rocketlazyloadscript" async data-wp-strategy="async" fetchpriority="low" id="comment-reply-js" data-rocket-src="https://zedwap.co/wp-includes/js/comment-reply.min.js?ver=7.1.4"></script>
+<script type="text/rocketlazyloadscript" defer id="akismet-frontend-js" data-rocket-src="https://zedwap.co/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1787209530"></script>
+<script type="text/rocketlazyloadscript">
+				WebFontConfig ={
+					google:{
+						families: [ 'Poppins:regular,500,600,700:latin&display=swap' ]
+					}
+				};
+
+				(function(){
+					var wf   = document.createElement('script');
+					wf.src   = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+					wf.type  = 'text/javascript';
+					wf.defer = 'true';
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(wf, s);
+				})();
+			</script>		<script type="text/rocketlazyloadscript" data-rocket-type='text/javascript'>
+			!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+		</script>
+
+		<script type="text/rocketlazyloadscript" data-rocket-type='text/javascript'>
+			var c = document.body.className;
+			c = c.replace(/tie-no-js/, 'tie-js');
+			document.body.className = c;
+		</script>
+		<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://zedwap.co/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadImg(id,l){var s='https://i.ytimg.com/vi/ID/hqdefault.jpg'.replace("ID",id),img=document.createElement("img");if(false&&!l&&false){img.setAttribute("loading","lazy");img.setAttribute("src",s);}else if(false&&!l&&!false){img.setAttribute("data-lazy-src",s);}else{img.setAttribute("src",s);}img.setAttribute("width","480");img.setAttribute("height","360");return img;}function lazyLoadThumb(id,alt,l){if(!/^[A-Za-z0-9_-]{11}$/.test(id)){return null;}var frag=document.createDocumentFragment(),img=lazyLoadImg(id,l);img.setAttribute("alt",alt);frag.appendChild(img);var btn=document.createElement("button");btn.setAttribute("class","play");btn.setAttribute("aria-label","Play Youtube video");frag.appendChild(btn);return frag;}function lazyLoadYoutubeIframe(){var src=this.parentNode.dataset.src,url;try{url=new URL(src,"https://www.youtube.com");}catch(err){return;}if("https:"!==url.protocol&&"http:"!==url.protocol){return;}if(["youtube.com","www.youtube.com","youtube-nocookie.com","www.youtube-nocookie.com"].indexOf(url.hostname)===-1){return;}if(url.username||url.password||url.port){return;}if(!/^\/embed\/[A-Za-z0-9_-]{11}\/?$/.test(url.pathname)){return;}url=new URL("https://"+url.hostname+url.pathname.replace(/\/$/,""));var query=this.parentNode.dataset.query||"";new URLSearchParams(query).forEach(function(v,k){url.searchParams.set(k,v);});url.searchParams.set("autoplay","1");var e=document.createElement("iframe");e.setAttribute("src",url.href);e.setAttribute("frameborder","0");e.setAttribute("allowfullscreen","1");e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");this.parentNode.parentNode.replaceChild(e,this.parentNode);}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,frag,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++){u='https://i.ytimg.com/vi/ID/hqdefault.jpg'.replace("ID",a[t].dataset.id);l=exclusions.some(function(exclusion){return u.indexOf(exclusion)!==-1;});e=document.createElement("div");e.setAttribute("data-id",a[t].dataset.id);e.setAttribute("data-query",a[t].dataset.query);e.setAttribute("data-src",a[t].dataset.src);frag=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l);if(!frag){continue;}e.appendChild(frag);a[t].appendChild(e);e.querySelector(".play").onclick=lazyLoadYoutubeIframe;}});</script>
+<script>var rocket_beacon_data = {"ajax_url":"https:\/\/zedwap.co\/wp-admin\/admin-ajax.php","nonce":"4908bb4b3b","url":"https:\/\/zedwap.co\/chile-one-tukalasekafye","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true,"preconnect_external_domain":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800,"preconnect_external_domain_elements":["link","script","iframe"],"preconnect_external_domain_exclusions":["static.cloudflareinsights.com","rel=\"profile\"","rel=\"preconnect\"","rel=\"dns-prefetch\"","rel=\"icon\""]}</script><script data-name="wpr-wpr-beacon" src='https://zedwap.co/wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js' async></script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1793429576 -->

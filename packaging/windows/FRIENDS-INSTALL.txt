@@ -1,0 +1,24 @@
+TRAIL VIDEO DOWNLOADER (TVD) — FRIEND INSTALL GUIDE
+
+Files in this package:
+- TVD-Setup-@VERSION@.exe: installs and starts the Windows download engine.
+- TVD-extension-@VERSION@.zip: Chrome extension files.
+
+INSTALL THE ENGINE
+1. Extract this friend package to a folder.
+2. Run TVD-Setup-@VERSION@.exe. It installs for your Windows account and attempts to install yt-dlp and FFmpeg through Winget. Internet access is needed for missing tools.
+3. If the installer reports a missing tool, open Windows Terminal and run:
+   winget install --id yt-dlp.yt-dlp --exact
+   winget install --id Gyan.FFmpeg.Essentials --exact
+
+INSTALL THE CHROME EXTENSION
+1. Extract TVD-extension-@VERSION@.zip to a folder and leave that folder in place.
+2. In Chrome, open chrome://extensions.
+3. Turn on Developer mode, click Load unpacked, and choose the extracted extension folder containing manifest.json.
+4. Pin Trail Video Downloader (TVD) from Chrome's Extensions menu.
+
+The engine starts automatically when you sign in to Windows. If the extension says Engine Offline, open this folder in File Explorer:
+%LOCALAPPDATA%\Programs\Trail Video Downloader
+Then double-click start-engine.vbs.
+
+This is a local developer-mode install, not a Chrome Web Store install. Chrome's guidance lists YouTube video downloading as a common reason for Web Store rejection. Only save media you own or are authorized to download.

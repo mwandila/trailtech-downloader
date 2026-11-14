@@ -1,0 +1,6 @@
+# reverse-engineering workspace (contains extracted proprietary files) — keep local only
+idm-study/
+
+# downloads
+*.download
+*.bin

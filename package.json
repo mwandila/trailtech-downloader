@@ -1,0 +1,28 @@
+{
+  "name": "downloader",
+  "version": "1.0.0",
+  "description": "Trail Video Downloader (TVD) with a segmented download engine and browser extension",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node cli.js",
+    "icons": "node scripts/create-png-icons.js",
+    "package:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows.ps1",
+    "package:extension": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-extension.ps1",
+    "package:friends": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-friends.ps1",
+    "test": "node scripts/test-setup.js"
+  },
+  "keywords": [
+    "download",
+    "idm",
+    "multi-segment",
+    "parallel",
+    "browser-extension",
+    "websocket"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "",
+  "license": "MIT"
+}
