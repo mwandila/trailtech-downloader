@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Trail Video Downloader (TVD)",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Trail Video Downloader with video quality selection and download queue",
   "permissions": [
     "storage",

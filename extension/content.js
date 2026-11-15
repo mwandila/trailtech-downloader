@@ -33,6 +33,7 @@ function sendExtensionMessage(message, callback) {
 
 // ==================== Inject main-world script ====================
 function injectMainWorld() {
+  if (isRestrictedStreamingPage()) return;
   try {
     if (!chrome.runtime?.id) return;
     const script = document.createElement("script");
@@ -55,7 +56,13 @@ if (document.readyState === "loading") {
 const observedElements = new WeakSet();
 let hiddenYouTubeOverlayUrl = "";
 
+function isRestrictedStreamingPage() {
+  const host = location.hostname.toLowerCase().replace(/^www\./, "");
+  return ["netflix.com", "primevideo.com", "amazon.com", "disneyplus.com", "hulu.com", "max.com", "peacocktv.com", "paramountplus.com"].some((domain) => host === domain || host.endsWith(`.${domain}`));
+}
+
 function checkMediaElement(el) {
+  if (isRestrictedStreamingPage()) return;
   if (observedElements.has(el)) return;
   observedElements.add(el);
 
@@ -133,7 +140,7 @@ document.addEventListener("click", (e) => {
 
 // ==================== Messages from main world ====================
 window.addEventListener("message", (event) => {
-  if (event.source !== window) return;
+  if (event.source !== window || isRestrictedStreamingPage()) return;
   if (event.data && event.data.source === "dm-main-world") {
     // Forward to background
     sendExtensionMessage(event.data);
@@ -152,6 +159,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 // ==================== Compact in-player download controls ====================
 function showDownloadPrompt(data) {
+  if (isRestrictedStreamingPage()) return;
   if (isYouTubeVideoPage()) {
     ensureYouTubeOverlay();
     return;
@@ -169,6 +177,10 @@ function isYouTubeVideoPage() {
 }
 
 function ensureYouTubeOverlay() {
+  if (isRestrictedStreamingPage()) {
+    document.getElementById("dm-youtube-overlay")?.remove();
+    return;
+  }
   if (window.top !== window || !isYouTubeVideoPage()) {
     document.getElementById("dm-youtube-overlay")?.remove();
     return;
